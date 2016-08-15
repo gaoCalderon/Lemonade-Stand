@@ -38,7 +38,7 @@ namespace Lemonade_Stand_Project
 
         public string weatherReport()
         {
-            Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit", , setTemperature());
+            Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit.", RandomWeatherSet(), setTemperature());
         }
 
     }
