@@ -41,6 +41,11 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit.", RandomWeatherSet(), setTemperature());
         }
 
+        public string weatherRecord()
+        {
+            return weatherReport();
+        }
+
     }
 
 }

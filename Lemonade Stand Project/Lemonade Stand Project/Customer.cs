@@ -8,32 +8,43 @@ namespace Lemonade_Stand_Project
 {
     class Customer
     {
-        string teen;
-        string parentChild;
-        string adult;
-        string athlete;
-        string dogWalker;
-        string elderly;
-        string fireman;
-        string policeman;
+        int teen;
+        int parentChild;
+        int adult;
+        int athlete;
+        int dogWalker;
+        int elderly;
+        int fireman;
+        int policeman;
 
-        public string Customers(string teen, string parentChild, string adult, string athlete, string dogWalker, string elderly, string fireman, string policeman)
+        public string Customers()
         {
-            this.teen = teen;
-            this.parentChild = parentChild;
-            this.adult = adult;
-            this.athlete = athlete;
-            this.dogWalker = dogWalker;
-            this.elderly = elderly;
-            this.fireman = fireman;
-            this.policeman = policeman;
+            this.teen = 1;
+            this.parentChild = 2;
+            this.adult = 1;
+            this.athlete = 1;
+            this.dogWalker = 1;
+            this.elderly = 1;
+            this.fireman = 1;
+            this.policeman = 1;
         }
 
-        public string randomCustomer()
+        public string randomCustomerpass()
         {
             Random c = new Random();
             c.Next(0, Customers.Count);
             string choice = Customers[c.Next(0, Customers.Count)];
+        }
+
+        public decimal purchaseLemonade()
+        {
+            
+        }
+
+        public string weatherAffects()
+        {
+            Weather weather = new Weather();
+            weather.weatherRecord();
         }
 
         public string Teen()
@@ -41,9 +52,16 @@ namespace Lemonade_Stand_Project
             return this.teen;
         }
 
-        public string teenPurchase()
+        public string teenPurchasePrecent()
         {
-
+            Weather weather = new Weather();
+            bool weather.weather = true;
+            "sunny" = true;
+            "partly cloudy" = true;
+            "partly cloudy with rain" = true;
+            "cloudy" = false;
+            "cloudy with rain" = false;
+            "rainy" = false;
         }
     }
 }
