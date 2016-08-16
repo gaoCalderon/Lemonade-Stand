@@ -28,7 +28,7 @@ namespace Lemonade_Stand_Project
         public void goToInventory()
         {
             Inventory goIntoInventory = new Inventory();
-            goIntoInventory.enterInventory();
+            goIntoInventory.showInventory();
             goIntoInventory.stockInventory();
         }
 
@@ -46,6 +46,7 @@ namespace Lemonade_Stand_Project
                     while (this.day < this.numberOfDays)
                     {
                         goToInventory();
+
                         //insert cycle of game play here (will repeat for 7days)
                     }
                     break;
@@ -53,6 +54,7 @@ namespace Lemonade_Stand_Project
                     while (this.day < this.twoWeeks)
                     {
                         goToInventory();
+
                         //insert cycle of game play here (will repeat for 7days)
                     }
                     break;
@@ -61,6 +63,7 @@ namespace Lemonade_Stand_Project
                     while (this.day < this.threeWeeks)
                     {
                         goToInventory();
+
                         //insert cycle of game play here (will repeat for 7days)
                     }
                     break;
@@ -68,6 +71,7 @@ namespace Lemonade_Stand_Project
                     while (this.day < this.twoWeeks)
                     {
                         goToInventory();
+
                         //insert cycle of game play here (will repeat for 7days)
                     }
                     break;

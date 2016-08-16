@@ -26,7 +26,6 @@ namespace Lemonade_Stand_Project
         weathers.Add(cloudy);
         weathers.Add(cloudy with rain);
         weathers.Add(rainy);
-        
        
 
         public void SetWeather()

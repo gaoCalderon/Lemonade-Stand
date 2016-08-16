@@ -27,7 +27,20 @@ namespace Lemonade_Stand_Project
         {
             return this.money;
         }
-        
+
+        public decimal useMoney()
+        {
+            //don't have this resolved yet!!! need help
+            results = getMoney - x();
+            return results;
+
+        }
+
+        public decimal lemonadePurchase()
+        {
+
+        }
+
         public int getCups()
         {
             return this.cups;
@@ -48,10 +61,10 @@ namespace Lemonade_Stand_Project
             return this.iceCubes;
         }
 
-        public string enterInventory()
+        public string showInventory()
         {
             Player person = new Player();
-            Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(),getMoney());
+            Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getMoney());
             Console.WriteLine("{0} number of Cups", getCups());
             Console.WriteLine("{0} number of Lemons", getLemons());
             Console.WriteLine("{0} number cups of Sugar", getSugar());
@@ -60,19 +73,20 @@ namespace Lemonade_Stand_Project
 
         public string stockInventory()
         {
-            Console.WriteLine("Would you like to purchase items for your inventory? Yes/No [ENTER]");
+            Console.WriteLine("Would you like to stock items in your inventory? Yes/No [ENTER]");
             Day day = new Day();
-            
             string userchoice = Console.ReadLine();
             if (userchoice == "yes")
             {
                 Console.WriteLine("What would you like to purchase?");
-                Console.WriteLine("Type in one: cups /lemons/sugar/ice [ENTER KEY]");
-                inventoryStore();
+                Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
+                Console.WriteLine("Other Options: e.) bankrupt / f.) help / g.)exit [ENTER KEY]");
+                addInventory();
             }
             else if (userchoice == "no")
             {
-                continue;
+                Console.WriteLine("OK,");
+                showInventory();
             }
             else
             {
@@ -81,8 +95,38 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        private string inventoryStore()
+        public string addInventory()
         {
+            string buyItem = Console.ReadLine();
+            Store shopping = new Store();
 
+            switch (buyItem)
+            {
+                case "a":
+                    shopping.purchaseCups();
+                    break;
+                case "b":
+                    shopping.purchaseLemons();
+                    break;
+                case "c":
+                    shopping.purchaseSugar();
+                    break;
+                case "d":
+                    shopping.purchaseIceCubes();
+                    break;
+                case "e":
+                    //add link to end of game + results here
+                    break;
+                case "f":
+                    //add link tips/rule page at introductory
+                    break;
+                case "g":
+                    Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("INVALID - choices are: cups, lemons, sugar, ice, bankrupt, help");
+                    break;
+            }
         }
+    }
 }

@@ -26,6 +26,7 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("Welcome to Lemonade Stand");
             player.createPlayerMode();
             Day numberOfDays = new Day();
+            numberOfDays.choiceOfDays();
 
 
 
