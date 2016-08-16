@@ -38,7 +38,7 @@ namespace Lemonade_Stand_Project
 
         public decimal lemonadePurchase()
         {
-
+            //don't have this resolved yet!!! need help
         }
 
         public int getCups()

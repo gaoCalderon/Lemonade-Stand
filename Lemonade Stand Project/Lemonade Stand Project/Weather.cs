@@ -10,25 +10,24 @@ namespace Lemonade_Stand_Project
     {
 
         string weatherSet;
+        int temperature;
 
         public void setWeather(string weatherSet)
         {
             this.weatherSet = weatherSet;
+            this.temperature = 0;
         }
 
         Weather weather = new Weather("sunny", "partly cloudy", "partly cloudy with rain", "cloudy", "cloudy with rain", "rainy");
-
         List<string> weathers = new List<string>();
-
         weathers.Add(sunny);
         weathers.Add(partly cloudy);
         weathers.Add(partyly cloudy with rain);
         weathers.Add(cloudy);
         weathers.Add(cloudy with rain);
         weathers.Add(rainy);
-       
 
-        public void SetWeather()
+        public string getWeather()
         {
             this.weatherSet = RandomWeatherSet();
         }
@@ -40,15 +39,20 @@ namespace Lemonade_Stand_Project
             string choice = weathers[t.Next(0, weathers.Count)];
         }
 
-        public void setTemperature()
+        public string getTemperature()
+        {
+            this.temperature = setWarmTemperature();
+        }
+
+        public string setWarmTemperature()
         {
             Random tempset = new Random();
-            tempset.Next(65, 110).ToString();
+            tempset.Next(65, 107).ToString();
         }
 
         public string weatherReport()
         {
-            Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit.", RandomWeatherSet(), setTemperature());
+            Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit.", getWeather(), getTemperature());
         }
 
         public string weatherRecord()
