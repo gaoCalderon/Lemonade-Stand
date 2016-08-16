@@ -29,7 +29,7 @@ namespace Lemonade_Stand_Project
 
 
 
-            Inventory enterInventory = new Inventory();
+            
 
         }
     }

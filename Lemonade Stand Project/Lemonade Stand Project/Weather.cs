@@ -16,18 +16,29 @@ namespace Lemonade_Stand_Project
             this.weatherSet = weatherSet;
         }
 
-        List<string> weather = new List<string>() { "sunny", "partly cloudy", "partly cloudy with rain", "cloudy", "cloudy with rain", "rainy" };
+        Weather weather = new Weather("sunny", "partly cloudy", "partly cloudy with rain", "cloudy", "cloudy with rain", "rainy");
+
+        List<string> weathers = new List<string>();
+
+        weathers.Add(sunny);
+        weathers.Add(partly cloudy);
+        weathers.Add(partyly cloudy with rain);
+        weathers.Add(cloudy);
+        weathers.Add(cloudy with rain);
+        weathers.Add(rainy);
+        
+       
 
         public void SetWeather()
         {
-            this.weatherSet = "weather";
+            this.weatherSet = RandomWeatherSet();
         }
 
         public string RandomWeatherSet()
         {
             Random t = new Random();
-            t.Next(0, weather.Count);
-            string choice = weather[t.Next(0, weather.Count)];
+            t.Next(0, weathers.Count);
+            string choice = weathers[t.Next(0, weathers.Count)];
         }
 
         public void setTemperature()

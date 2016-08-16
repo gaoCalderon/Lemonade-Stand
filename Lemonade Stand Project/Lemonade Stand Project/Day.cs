@@ -25,55 +25,58 @@ namespace Lemonade_Stand_Project
 
         }
 
-        public void LengthOfDays()
+        public void goToInventory()
         {
-            while (this.day < this.numberOfDays)
-            {
-                Console.WriteLine("Day {0}", this.day);
-                //insert cycle of game play here (will repeat for 7days)
-            }
+            Inventory goIntoInventory = new Inventory();
+            goIntoInventory.enterInventory();
+            goIntoInventory.stockInventory();
         }
 
 
-        public string days()
+        public string choiceOfDays()
         {
-            Console.WriteLine("How many number of days do you want to sale lemonade? 7, 14, 21 or 28 days?");
-            string userchoice = Console.ReadLine();
-            if (userchoice == "7")
+            Inventory enterInventory = new Inventory();
+            Console.WriteLine("Please choose how many number of days that you would like to sale lemonade for?");
+            Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
+            string days = Console.ReadLine();
+
+            switch (days)
             {
-                LengthOfDays();
-            }
-             else if (userchoice == "14")
-            {
-                while (this.day < this.twoWeeks)
-                {
-                    Console.WriteLine("Day {0}", this.day);
-                    //insert cycle of game play here (will repeat for 7days)
-                }
-            }
-            else if (userchoice == "21")
-            {
-                while (this.day < this.threeWeeks)
-                {
-                    Console.WriteLine("Day {0}", this.day);
-                    //insert cycle of game play here (will repeat for 7days)
-                }
-            }
-            else if (userchoice == "28")
-            {
-                while (this.day < this.fourthWeeks)
-                {
-                    Console.WriteLine("Day {0}", this.day);
-                    //insert cycle of game play here (will repeat for 7days)
-                }
-            }
-            else
-            {
-                Console.WriteLine("Please type: 7, 14, 21, 28 [ENTER]");
-                days();
+                case "7":
+                    while (this.day < this.numberOfDays)
+                    {
+                        goToInventory();
+                        //insert cycle of game play here (will repeat for 7days)
+                    }
+                    break;
+                case "14":
+                    while (this.day < this.twoWeeks)
+                    {
+                        goToInventory();
+                        //insert cycle of game play here (will repeat for 7days)
+                    }
+                    break;
+
+                case "21":
+                    while (this.day < this.threeWeeks)
+                    {
+                        goToInventory();
+                        //insert cycle of game play here (will repeat for 7days)
+                    }
+                    break;
+                case "28":
+                    while (this.day < this.twoWeeks)
+                    {
+                        goToInventory();
+                        //insert cycle of game play here (will repeat for 7days)
+                    }
+                    break;
+                default:
+                    Console.WriteLine("INVALID, please choose between 7, 14, 21, or 28");
+                    choiceOfDays();
+                    break;
             }
         }
-       
         
       }
 }

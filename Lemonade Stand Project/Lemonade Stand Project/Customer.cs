@@ -8,23 +8,29 @@ namespace Lemonade_Stand_Project
 {
     class Customer
     {
-        int teen;
+        int teenBoy;
+        int teenGirl;
         int parentChild;
-        int adult;
+        int adultMale;
+        int adultFemale;
         int athlete;
         int dogWalker;
-        int elderly;
+        int elderlyFemale;
+        int elderlyMale;
         int fireman;
         int policeman;
 
         public string Customers()
         {
-            this.teen = 1;
+            this.teenBoy = 1;
+            this.teenGirl = 1;
             this.parentChild = 2;
-            this.adult = 1;
+            this.adultFemale = 1;
+            this.adultMale = 1;
             this.athlete = 1;
             this.dogWalker = 1;
-            this.elderly = 1;
+            this.elderlyFemale = 1;
+            this.elderlyMale = 1;
             this.fireman = 1;
             this.policeman = 1;
         }

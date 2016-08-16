@@ -29,7 +29,7 @@ namespace Lemonade_Stand_Project
         List<string> AiNames = new List<string>() {"Sent", "Tey", "Cater", "Fin", "Einner"};
         public void AiSetName()
         {
-            this.name = "Computer";
+            this.name = RandomAiName();
         }
 
         public string RandomAiName()
@@ -42,7 +42,7 @@ namespace Lemonade_Stand_Project
         public string createPlayerMode()
         {
             Game game = new Game();
-            Console.WriteLine("Number of players: [TYPE] 1, or 2, or 1 and = verses Computer?");
+            Console.WriteLine("Number of players: [TYPE] 1, 2, or 1 and = verses Computer?");
             string numberOfPlayers = Console.ReadLine();
 
             if (numberOfPlayers == "1")
@@ -53,7 +53,6 @@ namespace Lemonade_Stand_Project
             {
                 game.playerOne();
                 game.playerTwo();
-
             }
             else if (numberOfPlayers == "1 and")
             {
@@ -62,7 +61,7 @@ namespace Lemonade_Stand_Project
             }
             else
             {
-                Console.WriteLine("Invalid: Please pick between: 1, 2, or 1 and");
+                Console.WriteLine("Invalid: Please pick between: 1, 2, 1 and");
                 createPlayerMode();
             }
         }
