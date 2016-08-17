@@ -35,10 +35,9 @@ namespace Lemonade_Stand_Project
             return setRanForecast;
         }
 
-        public int forecastPrintAffecter()
+        public void realDayForecast()
         {
             int results = setRandomForecast();
-            return results;
             if (results == 1)
             {
                 Console.WriteLine("Weather Forecast: Sunny");
@@ -65,7 +64,7 @@ namespace Lemonade_Stand_Project
             }
             else
             {
-                forecastPrintAffecter();
+                realDayForecast();
             }
         }
 
@@ -87,10 +86,9 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("Temperature in the hight: {0}F", GetDayTemperature());
         }
 
-        public int temperaturePrintAffecter()
+        public void realDayTemperature()
         {
             int results = setRandomTemperature();
-            return results;
             if (results <= 72)
             {
                 temperatureCall();
@@ -117,17 +115,17 @@ namespace Lemonade_Stand_Project
             }
             else
             {
-                temperaturePrintAffecter();
+                realDayTemperature();
             }
         }
 
 
-       // public void weatherForecast()
-        //{
-           // Console.WriteLine("Weather Forcast:");
-           // Console.WriteLine("Predicts: {0}", setRandomForecast());
-            //Console.WriteLine("in the highs of {0} degrees Fahrenheit", setRandomTemperature());
-        //}
+       public void weatherForecast()
+        {
+           Console.WriteLine("Weather Forcast:");
+           Console.WriteLine("Predicts: {0}", setRandomForecast());
+           Console.WriteLine("in the highs of {0} degrees Fahrenheit", setRandomTemperature());
+        }
 
         //public void weatherReport()
         //{
