@@ -15,7 +15,20 @@ namespace Lemonade_Stand_Project
         int threeWeeks;
         int fourthWeeks;
 
-        public Days()
+        Weather weather = new Weather();
+
+        //List<Weather> weathers = new List<Weather>();
+
+        //Weather weather = new Weather();
+        //List<string> weathers = new List<string>();
+        //weathers.Add("sunny");
+        //weathers.Add("partly cloudy");
+        //weathers.Add("partyly cloudy with rain");
+        //weathers.Add("cloudy");
+        //weathers.Add("cloudy with rain");
+        //weathers.Add("rainy");
+
+        public Day()
         {
             this.day = 1;
             this.numberOfDays = 7;
@@ -25,6 +38,11 @@ namespace Lemonade_Stand_Project
 
         }
 
+        public int GetDayTemperature()
+        {
+            weather.temperature = weather.setWarmTemperature();
+            return weather.temperature;
+        }
         public void goToInventory()
         {
             Inventory goIntoInventory = new Inventory();
@@ -33,7 +51,7 @@ namespace Lemonade_Stand_Project
         }
 
 
-        public string choiceOfDays()
+        public void choiceOfDays()  //not done yet
         {
             Inventory enterInventory = new Inventory();
             Console.WriteLine("Please choose how many number of days that you would like to sale lemonade for?");

@@ -8,7 +8,7 @@ namespace Lemonade_Stand_Project
 {
     class Store
     {
-        public string purchaseCups()
+        public void purchaseCups()
         {
             Console.WriteLine("How many cups do you want to buy?");
             Console.WriteLine("a.) 25 cups for $1.00");
@@ -41,7 +41,7 @@ namespace Lemonade_Stand_Project
 
         }
 
-        public string purchaseLemons()
+        public void purchaseLemons()
         {
             Console.WriteLine("How many lemons do you want to buy?");
             Console.WriteLine("a.) 10 lemons for $1.00");
@@ -73,7 +73,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string purchaseSugar()
+        public void purchaseSugar()
         {
             Console.WriteLine("How many cups of sugar do you want to buy?");
             Console.WriteLine("a.) 8 cups of sugar for $0.80");
@@ -105,7 +105,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string purchaseIceCubes()
+        public void purchaseIceCubes()
         {
             Console.WriteLine("How many ice cubes do you want to buy?");
             Console.WriteLine("a.) 100 ice cubes for $0.75");
@@ -137,7 +137,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public static noMoreBuying()
+        public void noMoreBuying()
         {
             Inventory inventory = new Inventory();
             inventory.showInventory();
@@ -147,7 +147,7 @@ namespace Lemonade_Stand_Project
             inventory.addInventory();
         }
 
-        public string keepBuyingCups()
+        public void keepBuyingCups()
         {
             Console.WriteLine("Do you want to keep buying more cups? Yes/No [ENTER KEY]");
             string response = Console.ReadLine();
@@ -166,7 +166,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string keepBuyingLemons()
+        public void keepBuyingLemons()
         {
             Console.WriteLine("Do you want to keep buying more lemons? Yes/No [ENTER KEY]");
             string response = Console.ReadLine();
@@ -185,7 +185,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string keepBuyingSugar()
+        public void keepBuyingSugar()
         {
             Console.WriteLine("Do you want to keep buying more sugar? Yes/No [ENTER KEY]");
             string response = Console.ReadLine();
@@ -204,7 +204,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string keepBuyingIce()
+        public void keepBuyingIce()
         {
             Console.WriteLine("Do you want to keep buying more ice cubes? Yes/No [ENTER KEY]");
             string response = Console.ReadLine();

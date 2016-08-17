@@ -10,12 +10,12 @@ namespace Lemonade_Stand_Project
     {
 
         Player player = new Player();
-        public string playerOne()
+        public void playerOne()
         {
             player.SetName();
         }
 
-        public string playerTwo()
+        public void playerTwo()
         {
             player.SetName();
         }

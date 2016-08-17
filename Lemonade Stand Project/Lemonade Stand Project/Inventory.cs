@@ -61,7 +61,7 @@ namespace Lemonade_Stand_Project
             return this.iceCubes;
         }
 
-        public string showInventory()
+        public void showInventory()
         {
             Player person = new Player();
             Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getMoney());
@@ -71,7 +71,7 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("{0} number of Ice Cubes", getIceCubes());
         }
 
-        public string stockInventory()
+        public void stockInventory()
         {
             Console.WriteLine("Would you like to stock items in your inventory? Yes/No [ENTER]");
             Day day = new Day();
@@ -95,7 +95,7 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public string addInventory()
+        public void addInventory()
         {
             string buyItem = Console.ReadLine();
             Store shopping = new Store();

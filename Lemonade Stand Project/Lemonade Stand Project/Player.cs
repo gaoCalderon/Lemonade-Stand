@@ -37,12 +37,13 @@ namespace Lemonade_Stand_Project
             Random a = new Random();
             a.Next(0, AiNames.Count);
             string choice = AiNames[a.Next(0, AiNames.Count)];
+            return choice;
         }
 
-        public string createPlayerMode()
+        public void createPlayerMode()
         {
             Game game = new Game();
-            Console.WriteLine("Number of players: [TYPE] 1, 2, or 1 and = verses Computer?");
+            Console.WriteLine("Number of players, Please TYPE either: 1, 2, or 1 and (play against computer)?");
             string numberOfPlayers = Console.ReadLine();
 
             if (numberOfPlayers == "1")

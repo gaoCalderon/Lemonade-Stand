@@ -10,26 +10,20 @@ namespace Lemonade_Stand_Project
     {
 
         string weatherSet;
-        int temperature;
+        public int temperature;
+        public string forecast;
 
-        public void setWeather(string weatherSet)
+        public Weather(int temperature, string forecast, string weatherSet)
         {
+            this.temperature = temperature;
+            this.forecast = forecast;
             this.weatherSet = weatherSet;
-            this.temperature = 0;
         }
-
-        Weather weather = new Weather("sunny", "partly cloudy", "partly cloudy with rain", "cloudy", "cloudy with rain", "rainy");
-        List<string> weathers = new List<string>();
-        weathers.Add(sunny);
-        weathers.Add(partly cloudy);
-        weathers.Add(partyly cloudy with rain);
-        weathers.Add(cloudy);
-        weathers.Add(cloudy with rain);
-        weathers.Add(rainy);
 
         public string getWeather()
         {
-            this.weatherSet = RandomWeatherSet();
+            this.weatherSet = (); //come back to this
+            return this.weatherSet;
         }
 
         public string RandomWeatherSet()
@@ -37,22 +31,19 @@ namespace Lemonade_Stand_Project
             Random t = new Random();
             t.Next(0, weathers.Count);
             string choice = weathers[t.Next(0, weathers.Count)];
+            return choice;
         }
 
-        public string getTemperature()
-        {
-            this.temperature = setWarmTemperature();
-        }
-
-        public string setWarmTemperature()
+        public int setWarmTemperature()
         {
             Random tempset = new Random();
-            tempset.Next(65, 107).ToString();
+            int setTemp = tempset.Next(65, 107);
+            return setTemp;
         }
 
-        public string weatherReport()
+        public void weatherReport()
         {
-            Console.WriteLine("The weather report today is {0} at about {1} degrees Fahrenheit.", getWeather(), getTemperature());
+            Console.WriteLine("The weather report {0} at about {1} degrees Fahrenheit.", getWeather(), ());
         }
 
         public string weatherRecord()

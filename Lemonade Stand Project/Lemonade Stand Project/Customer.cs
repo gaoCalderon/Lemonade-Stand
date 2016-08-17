@@ -8,31 +8,31 @@ namespace Lemonade_Stand_Project
 {
     class Customer
     {
-        int teenBoy;
-        int teenGirl;
-        int parentChild;
-        int adultMale;
-        int adultFemale;
-        int athlete;
-        int dogWalker;
-        int elderlyFemale;
-        int elderlyMale;
-        int fireman;
-        int policeman;
+        string teenBoy;
+        string teenGirl;
+        string parentChild;
+        string adultMale;
+        string adultFemale;
+        string athlete;
+        string dogWalker;
+        string elderlyFemale;
+        string elderlyMale;
+        string fireman;
+        string policeman;
 
-        public string Customers()
+        public Customer(string teenBoy, string teenGirl, string parentChild, string adultMale, string adultFemale, string athlete, string dogWalker, string elderlyFemale, string elderlyMale, string fireman, string policeman)
         {
-            this.teenBoy = 1;
-            this.teenGirl = 1;
-            this.parentChild = 2;
-            this.adultFemale = 1;
-            this.adultMale = 1;
-            this.athlete = 1;
-            this.dogWalker = 1;
-            this.elderlyFemale = 1;
-            this.elderlyMale = 1;
-            this.fireman = 1;
-            this.policeman = 1;
+            this.teenBoy = teenBoy;
+            this.teenGirl = teenGirl;
+            this.parentChild = parentChild;
+            this.adultFemale = adultFemale;
+            this.adultMale = adultMale;
+            this.athlete = athlete;
+            this.dogWalker = dogWalker;
+            this.elderlyFemale = elderlyFemale;
+            this.elderlyMale = elderlyMale;
+            this.fireman = fireman;
+            this.policeman = policeman;
         }
 
         public string randomCustomerpass()
@@ -40,6 +40,7 @@ namespace Lemonade_Stand_Project
             Random c = new Random();
             c.Next(0, Customers.Count);
             string choice = Customers[c.Next(0, Customers.Count)];
+            return choice;
         }
 
         public decimal purchaseLemonade()
@@ -49,7 +50,7 @@ namespace Lemonade_Stand_Project
 
         public string weatherAffects()
         {
-            Weather weather = new Weather();
+            Weather weather = new Weather(0);
             weather.weatherRecord();
         }
 
@@ -60,8 +61,8 @@ namespace Lemonade_Stand_Project
 
         public string teenPurchasePrecent()
         {
-            Weather weather = new Weather();
-            bool weather.weather = true;
+            Weather weathers = new Weather();
+            bool weathers.weather = true;
             "sunny" = true;
             "partly cloudy" = true;
             "partly cloudy with rain" = true;
