@@ -15,18 +15,6 @@ namespace Lemonade_Stand_Project
         int threeWeeks;
         int fourthWeeks;
 
-        Weather weather = new Weather();
-
-        //List<Weather> weathers = new List<Weather>();
-
-        //Weather weather = new Weather();
-        //List<string> weathers = new List<string>();
-        //weathers.Add("sunny");
-        //weathers.Add("partly cloudy");
-        //weathers.Add("partyly cloudy with rain");
-        //weathers.Add("cloudy");
-        //weathers.Add("cloudy with rain");
-        //weathers.Add("rainy");
 
         public Day()
         {
@@ -38,11 +26,6 @@ namespace Lemonade_Stand_Project
 
         }
 
-        public int GetDayTemperature()
-        {
-            weather.temperature = weather.setWarmTemperature();
-            return weather.temperature;
-        }
         public void goToInventory()
         {
             Inventory goIntoInventory = new Inventory();

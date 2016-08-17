@@ -31,8 +31,6 @@ namespace Lemonade_Stand_Project
         public decimal useMoney()
         {
             //don't have this resolved yet!!! need help
-            results = getMoney - x();
-            return results;
 
         }
 

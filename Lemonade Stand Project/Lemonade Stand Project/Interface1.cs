@@ -8,5 +8,6 @@ namespace Lemonade_Stand_Project
 {
     interface Interface1
     {
+
     }
 }

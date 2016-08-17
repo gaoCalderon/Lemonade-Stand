@@ -8,47 +8,47 @@ namespace Lemonade_Stand_Project
 {
     class Weather
     {
-
-        string weatherSet;
         public int temperature;
         public string forecast;
 
-        public Weather(int temperature, string forecast, string weatherSet)
+        public Weather(int temperature, string forecast)
         {
             this.temperature = temperature;
             this.forecast = forecast;
-            this.weatherSet = weatherSet;
         }
 
-        public string getWeather()
+        List<string> typeOfForecast = new List<string>() { "Sunny", "Partly Cloudy", "Partly Cloudy with Rain", "Cloudy", "Cloudy with Rain", "Rainy" };
+
+        public string getForecast()
         {
-            this.weatherSet = (); //come back to this
-            return this.weatherSet;
+            this.forecast = randomForecast();
+            return this.forecast;
         }
 
-        public string RandomWeatherSet()
+        public string randomForecast()
         {
-            Random t = new Random();
-            t.Next(0, weathers.Count);
-            string choice = weathers[t.Next(0, weathers.Count)];
+            Random f = new Random();
+            f.Next(0, typeOfForecast.Count);
+            string choice = typeOfForecast[f.Next(0, typeOfForecast.Count)];
             return choice;
         }
 
-        public int setWarmTemperature()
+        public int setRandomTemperature()
         {
             Random tempset = new Random();
             int setTemp = tempset.Next(65, 107);
             return setTemp;
         }
 
-        public void weatherReport()
+        public int GetDayTemperature()
         {
-            Console.WriteLine("The weather report {0} at about {1} degrees Fahrenheit.", getWeather(), ());
+            this.temperature = setRandomTemperature();
+            return temperature;
         }
 
-        public string weatherRecord()
+        public void weatherReport()
         {
-            return weatherReport();
+            Console.WriteLine("Weather report {0} at about {1} degrees Fahrenheit.", getForecast(), GetDayTemperature());
         }
 
     }

@@ -27,6 +27,7 @@ namespace Lemonade_Stand_Project
         }
 
         List<string> AiNames = new List<string>() {"Sent", "Tey", "Cater", "Fin", "Einner"};
+
         public void AiSetName()
         {
             this.name = RandomAiName();
@@ -58,7 +59,7 @@ namespace Lemonade_Stand_Project
             else if (numberOfPlayers == "1 and")
             {
                 game.playerOne();
-                RandomAiName();
+                AiSetName();
             }
             else
             {
