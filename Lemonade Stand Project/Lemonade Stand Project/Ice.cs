@@ -8,6 +8,10 @@ namespace Lemonade_Stand_Project
 {
     class Ice : Inventory
     {
+        public void useIceCube()
+        {
+            iceCubes -= 1;
+        }
 
         public void buy100iceCube()
         {

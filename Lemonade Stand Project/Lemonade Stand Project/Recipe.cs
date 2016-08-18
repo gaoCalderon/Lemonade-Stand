@@ -8,6 +8,88 @@ namespace Lemonade_Stand_Project
 {
     class Recipe : Inventory
     {
+        Cups cp = new Cups();
+        Lemons l = new Lemons();
+        Sugar s = new Sugar();
+        Ice i = new Ice();
+        Customer cm = new Customer();
+
+        public void showRecipe()
+        {
+            Console.WriteLine("Price & Quality of Lemonade Stand");
+
+        }
+
+        public void defaultRecipe()
+        {
+            Console.WriteLine("Price & Quality of Lemonade Stand");
+            Console.WriteLine("set cup charge: $0.25");
+            Console.WriteLine("Lemons per Pitcher: 4");
+            Console.WriteLine("Sugar cup per pitcher: 2");
+            Console.WriteLine("Ice cube per cup: 10");
+        }
+
+        public void setDefaultRecipe()
+        {
+            // insert math here of defaultCupCharge X random # of customers that actually purchased a cup in day
+            // insert math here of defaultUseLemon X # of pitchers made to serve 8 customers
+            // insert math here of defaultUseSugar X # of picchers made to serve 8 customers
+            // insert math here of defaultUseIce X # of cups actually sold
+        }
+
+        public void defaultCupCharge()
+        {
+            money += 0.25m;
+        }
+
+        public void defaultUseLemon()
+        {
+            lemons -= 4;
+        }
+
+        public void defaultUseSugar()
+        {
+            sugar -= 2;
+        }
+
+        public void defaultUseIce()
+        {
+            iceCubes -= 10;
+        }
+
+        public void setChangeRecipe()
+        {
+
+        }
+
+
+        public void playerSetRecipe()
+        {
+            defaultRecipe();
+            Console.WriteLine("How do you want to set your Price & Quality?");
+            Console.WriteLine("Do you want to use the defualt settings above or make changes?");
+            Console.WriteLine("Please type in one: keep /change [ENTER KEY]");
+            keepChange();
+        }
+
+        public void keepChange()
+        {
+            string choice = Console.ReadLine();
+            if (choice == "keep")
+            {
+                setDefaultRecipe();
+            }
+            else if (choice == "change")
+            {
+                setChangeRecipe();
+            }
+            else
+            {
+                Console.WriteLine("INVALID, Please type in either choice: keep / change [ENTER KEY]");
+                keepChange();
+            }
+        }
+
 
 
         public void showInventory()

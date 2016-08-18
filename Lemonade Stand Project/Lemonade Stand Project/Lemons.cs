@@ -8,6 +8,12 @@ namespace Lemonade_Stand_Project
 {
     class Lemons : Inventory
     {
+
+        public void useLemon()
+        {
+            lemons -= 1;
+        }
+
         public void buy10Lemons()
         {
             if (getMoney() > 1.00m)

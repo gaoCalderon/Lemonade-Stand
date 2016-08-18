@@ -9,6 +9,11 @@ namespace Lemonade_Stand_Project
     class Sugar : Inventory
     {
 
+        public void useSugar()
+        {
+            sugar -= 1;
+        }
+
         public void buy8cupSugar()
         {
             if (getMoney() > 0.80m)

@@ -9,6 +9,11 @@ namespace Lemonade_Stand_Project
     class Cups : Inventory
     {
 
+        public void cupBought()
+        {
+            cups -= 1;
+        }
+
         public void buy25Cups()
         {
             if (getMoney() > 1.00m)

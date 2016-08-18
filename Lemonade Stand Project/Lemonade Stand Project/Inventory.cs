@@ -28,22 +28,9 @@ namespace Lemonade_Stand_Project
             return this.money;
         }
 
-        public decimal checkMoney()
+        public void checkMoney()
         {
-             return getMoney();
-        }
-
-        public decimal useMoney()
-        {
-            Store i = new Store();
-
-            result = getMoney +- ();
-            return result;
-        }
-
-        public decimal lemonadePurchase()
-        {
-            //don't have this resolved yet!!! need help
+            Console.WriteLine("Money: {0}", getMoney());
         }
 
         public int getCups()
