@@ -22,11 +22,8 @@ namespace Lemonade_Stand_Project
 
         public void runGame()
         {
-            Player player = new Player();
             Console.WriteLine("Welcome to Lemonade Stand");
             player.createPlayerMode();
-            Day numberOfDays = new Day();
-            numberOfDays.choiceOfDays();
 
 
 

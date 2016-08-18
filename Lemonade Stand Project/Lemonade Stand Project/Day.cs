@@ -9,17 +9,17 @@ namespace Lemonade_Stand_Project
     class Day
     {
 
-        int day;
-        int numberOfDays;
-        int twoWeeks;
-        int threeWeeks;
-        int fourthWeeks;
+        public int day;
+        public int week;
+        public int twoWeeks;
+        public int threeWeeks;
+        public int fourthWeeks;
 
 
         public Day()
         {
             this.day = 1;
-            this.numberOfDays = 7;
+            this.week = 7;
             this.twoWeeks = 14;
             this.threeWeeks = 21;
             this.fourthWeeks = 28;
@@ -35,9 +35,10 @@ namespace Lemonade_Stand_Project
 
         Weather w = new Weather();
 
-        public void choiceOfDays()  //not done yet
+
+
+        public void singleDayPath()  //not done yet
         {
-            Inventory enterInventory = new Inventory();
             Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
             Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
             string days = Console.ReadLine();
@@ -45,48 +46,108 @@ namespace Lemonade_Stand_Project
             switch (days)
             {
                 case "7":
-                    while (this.day < this.numberOfDays)
+                    while (this.day < this.week)
                     {
-                        w.weatherForecast();
-                        goToInventory();
 
-                        //insert cycle of game play here (will repeat for 7days)
                     }
+                    //create a method to be called inside here {}
                     break;
                 case "14":
                     while (this.day < this.twoWeeks)
                     {
-                        w.weatherForecast();
-                        goToInventory();
 
-                        //insert cycle of game play here (will repeat for 7days)
                     }
+                    //use that method created for inside here{}
                     break;
 
                 case "21":
                     while (this.day < this.threeWeeks)
                     {
-                        w.weatherForecast();
-                        goToInventory();
 
-                        //insert cycle of game play here (will repeat for 7days)
                     }
+                    //use that method created for inside here{}
                     break;
                 case "28":
-                    while (this.day < this.twoWeeks)
+                    while (this.day < this.fourthWeeks)
                     {
-                        w.weatherForecast();
-                        goToInventory();
 
-                        //insert cycle of game play here (will repeat for 7days)
                     }
+                    //use that method created for inside here{}
                     break;
                 default:
                     Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
-                    choiceOfDays();
+                    singleDayPath();
                     break;
             }
         }
-        
-      }
+
+        public void doubleDayPay()
+        {
+            Inventory enterInventory = new Inventory();
+            Player player = new Player();
+            Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
+            Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
+            string days = Console.ReadLine();
+
+            switch (days)
+            {
+                case "7":
+                    //repeat 7days
+                    //create a method for two players to be called inside here {}
+                    break;
+                case "14":
+                    //repeat 14days
+                    //use that method created for inside here{}
+                    break;
+
+                case "21":
+                    //repeat 21days
+                    //use that method created for inside here{}
+                    break;
+                case "28":
+                    //repeat 28days
+                    //use that method created for inside here{}
+                    break;
+                default:
+                    Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
+                    singleDayPath();
+                    break;
+            }
+
+        }
+
+        public void humanAiDayPath()
+        {
+            Inventory enterInventory = new Inventory();
+            Player player = new Player();
+            Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
+            Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
+            string days = Console.ReadLine();
+
+            switch (days)
+            {
+                case "7":
+                    //repeat 7days
+                    //create a method for human & ai players to be called inside here {}
+                    break;
+                case "14":
+                    //repeat 14days
+                    //use that method created for inside here{}
+                    break;
+
+                case "21":
+                    //repeat 21days
+                    //use that method created for inside here{}
+                    break;
+                case "28":
+                    //repeat 28days
+                    //use that method created for inside here{}
+                    break;
+                default:
+                    Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
+                    singleDayPath();
+                    break;
+            }
+        }
+    }
 }

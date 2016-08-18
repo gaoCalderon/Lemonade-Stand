@@ -9,10 +9,12 @@ namespace Lemonade_Stand_Project
     class Player
     {
         string name;
+        string aiName;
 
-        public void player(string name)
+        public void player(string name, string aiName)
         {
             this.name = name;
+            this.aiName = aiName;
         }
 
          public string getName()
@@ -28,9 +30,10 @@ namespace Lemonade_Stand_Project
 
         List<string> AiNames = new List<string>() {"Sent", "Tey", "Cater", "Fin", "Einner"};
 
-        public void AiSetName()
+        public string getAiName()
         {
-            this.name = RandomAiName();
+            aiName = RandomAiName();
+            return aiName;
         }
 
         public string RandomAiName()
@@ -44,22 +47,27 @@ namespace Lemonade_Stand_Project
         public void createPlayerMode()
         {
             Game game = new Game();
-            Console.WriteLine("Number of players, Please TYPE either: 1, 2, or 1 and (play against computer)?");
+            Day day = new Day();
+            Console.WriteLine("Number of players, Please TYPE either: 1, 2, or 1 and (play against computer) [ENTER KEY]");
             string numberOfPlayers = Console.ReadLine();
 
             if (numberOfPlayers == "1")
             {
                 game.playerOne();
+                day.singleDayPath();
             }
             else if (numberOfPlayers == "2")
             {
                 game.playerOne();
                 game.playerTwo();
+                day.doubleDayPay();
+
             }
             else if (numberOfPlayers == "1 and")
             {
                 game.playerOne();
-                AiSetName();
+                RandomAiName();
+                day.humanAiDayPath();
             }
             else
             {
