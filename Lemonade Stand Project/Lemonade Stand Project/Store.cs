@@ -9,6 +9,11 @@ namespace Lemonade_Stand_Project
     class Store
     {
 
+        public void invalid()
+        {
+            Console.WriteLine("INVALID / Please type in choices between: a, b, or c [ENTER KEY]");
+        }
+
         Cups cup = new Cups();
 
         public void purchaseCups()
@@ -35,11 +40,13 @@ namespace Lemonade_Stand_Project
             }
             else
             {
-                Console.WriteLine("INVALID / Please type in choices between: a, b, or c + [ENTER KEY]");
+                invalid();
                 purchaseCups();
             }
 
         }
+
+        Lemons lemon = new Lemons();
 
         public void purchaseLemons()
         {
@@ -50,28 +57,27 @@ namespace Lemonade_Stand_Project
             string buy = Console.ReadLine();
             if (buy == "a")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                lemon.buy10Lemons();
                 keepBuyingLemons();
             }
             else if (buy == "b")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                lemon.buy30Lemons();
                 keepBuyingLemons();
             }
             else if (buy == "c")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                lemon.buy75Lemons();
                 keepBuyingLemons();
             }
             else
             {
-                Console.WriteLine("INVALID / Please type in choices between: a, b, or c + [ENTER KEY]");
+                invalid();
                 purchaseLemons();
             }
         }
+
+        Sugar sugar = new Sugar();
 
         public void purchaseSugar()
         {
@@ -82,28 +88,27 @@ namespace Lemonade_Stand_Project
             string buy = Console.ReadLine();
             if (buy == "a")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                sugar.buy8cupSugar();
                 keepBuyingSugar();
             }
             else if (buy == "b")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                sugar.buy20cupSugar();
                 keepBuyingSugar();
             }
             else if (buy == "c")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                sugar.buy48cupSugar();
                 keepBuyingSugar();
             }
             else
             {
-                Console.WriteLine("INVALID / Please type in choices between: a, b, or c + [ENTER KEY]");
+                invalid();
                 purchaseSugar();
             }
         }
+
+        Ice ice = new Ice();
 
         public void purchaseIceCubes()
         {
@@ -114,25 +119,22 @@ namespace Lemonade_Stand_Project
             string buy = Console.ReadLine();
             if (buy == "a")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                ice.buy100iceCube();
                 keepBuyingIce();
             }
             else if (buy == "b")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                ice.buy250iceCube();
                 keepBuyingIce();
             }
             else if (buy == "c")
             {
-                //insert return remaining subtraction amount from $20 bill
-                //insert return add of what was bought to inventory
+                ice.buy500iceCubes();
                 keepBuyingIce();
             }
             else
             {
-                Console.WriteLine("INVALID / Please type in choice between: a, b, c + [ENTER KEY]");
+                invalid();
                 purchaseIceCubes();
             }
         }

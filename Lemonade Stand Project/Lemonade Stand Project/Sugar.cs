@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Lemonade_Stand_Project
 {
-    class Lemons : Inventory
+    class Sugar : Inventory
     {
-        public void buy10Lemons()
+
+        public void buy8cupSugar()
         {
-            if (getMoney() > 1.00m)
+            if (getMoney() > 0.80m)
             {
-                lemons += 10;
-                money -= 1.00m;
+                sugar += 8;
+                money -= 0.80m;
             }
             else
             {
@@ -21,12 +22,12 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public void buy30Lemons()
+        public void buy20cupSugar()
         {
-            if (getMoney() > 2.40m)
+            if (getMoney() > 1.60m)
             {
-                lemons += 30;
-                money -= 2.40m;
+                sugar += 20;
+                money -= 1.60m;
             }
             else
             {
@@ -34,12 +35,12 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        public void buy75Lemons()
+        public void buy48cupSugar()
         {
-            if (getMoney() > 3.75m)
+            if (getMoney() > 4.32m)
             {
-                lemons += 75;
-                money -= 3.75m;
+                sugar += 48;
+                money -= 4.32m;
             }
             else
             {
