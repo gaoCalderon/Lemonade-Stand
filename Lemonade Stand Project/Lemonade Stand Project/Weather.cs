@@ -11,13 +11,11 @@ namespace Lemonade_Stand_Project
         public int temperature;
         public int forecast;
 
-        public Weather(int temperature, int forecast)
+        public Weather()
         {
-            this.temperature = temperature;
-            this.forecast = forecast;
+            this.temperature = 0;
+            this.forecast = 0;
         }
-
-        //List<string> typeOfForecast = new List<string>() { "Sunny", "Partly Cloudy", "Partly Cloudy with Rain", "Cloudy", "Cloudy with Rain", "Rainy" };
 
         public int getForecast()
         {
@@ -28,9 +26,6 @@ namespace Lemonade_Stand_Project
         public int setRandomForecast()
         {
             Random f = new Random();
-            //f.Next(0, typeOfForecast.Count);
-            //string choice = typeOfForecast[f.Next(0, typeOfForecast.Count)];
-            //return choice;
             int setRanForecast = f.Next(1, 6);
             return setRanForecast;
         }
@@ -127,10 +122,12 @@ namespace Lemonade_Stand_Project
            Console.WriteLine("in the highs of {0} degrees Fahrenheit", setRandomTemperature());
         }
 
-        //public void weatherReport()
-        //{
-            //Console.WriteLine("Weather report {0} at about {1} degrees Fahrenheit.", getForecast(), GetDayTemperature());
-        //}
+        public void getWeatherForecast()
+        {
+            Console.WriteLine("Weather Forcast:");
+            Console.WriteLine("Predicts: {0}", getForecast());
+            Console.WriteLine("in the highs of {0} degrees Fahrenheit", GetDayTemperature());
+        }
 
     }
 

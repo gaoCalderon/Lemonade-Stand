@@ -18,7 +18,7 @@ namespace Lemonade_Stand_Project
 
         public void askNumberofCubes()
         {
-            Console.WriteLine("# of cubes per cup?");
+            Console.WriteLine("Type in # of cubes per cup [ENTER KEY]");
         }
 
         public int setNumberCubesToCup()

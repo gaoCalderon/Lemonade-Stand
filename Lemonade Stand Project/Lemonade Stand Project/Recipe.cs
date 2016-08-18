@@ -61,11 +61,29 @@ namespace Lemonade_Stand_Project
             iceCubes -= 10;
         }
 
-        public void setChangeRecipe()
+        public void setChangeLemonRecipe()
         {
-
+            l.askNumberOfLemons();
+            l.setNumberOfLemons();
         }
 
+        public void setChangeSugarRecipe()
+        {
+            s.askCupOfSugar();
+            s.setCupsOfSugar();
+        }
+
+        public void setChangeIceRecipe()
+        {
+            i.askNumberofCubes();
+            i.setNumberCubesToCup();
+        }
+
+        public void setChangeCupCharges()
+        {
+            cp.askCupCharge();
+            cp.setCupCharge();
+        }
 
         public void playerSetRecipe()
         {
@@ -85,7 +103,7 @@ namespace Lemonade_Stand_Project
             }
             else if (choice == "change")
             {
-                setChangeRecipe();
+                setChangeLemonRecipe();
             }
             else
             {
@@ -93,8 +111,6 @@ namespace Lemonade_Stand_Project
                 keepChange();
             }
         }
-
-
 
         public void showInventory()
         {
@@ -115,7 +131,8 @@ namespace Lemonade_Stand_Project
             {
                 Console.WriteLine("What would you like to purchase?");
                 Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
-                Console.WriteLine("Other Options: e.) bankrupt / f.) help / g.)exit [ENTER KEY]");
+                Console.WriteLine("Other Options:");
+                Console.WriteLine("e.)done buying / f.) get weather forecast g.) bankrupt / h.) help / i.)exit [ENTER KEY]");
                 addInventory();
             }
             else if (userchoice == "no")
@@ -130,10 +147,12 @@ namespace Lemonade_Stand_Project
             }
         }
 
+
         public void addInventory()
         {
             string buyItem = Console.ReadLine();
             Store shopping = new Store();
+            Weather w = new Weather();
 
             switch (buyItem)
             {
@@ -150,12 +169,19 @@ namespace Lemonade_Stand_Project
                     shopping.purchaseIceCubes();
                     break;
                 case "e":
-                    //add link to end of game + results here
+                    //add link to start game day cycle one
                     break;
                 case "f":
-                    //add link tips/rule page at introductory
+                    w.getWeatherForecast();
+                    shopping.noMoreBuying();
                     break;
                 case "g":
+                    //add link to end of game + results here
+                    break;
+                case "h":
+                    //add link tips/rule page at introductory
+                    break;
+                case "i":
                     Environment.Exit(0);
                     break;
                 default:

@@ -18,7 +18,7 @@ namespace Lemonade_Stand_Project
 
         public void askCupOfSugar()
         {
-            Console.WriteLine("cups of Suger in pitcher?");
+            Console.WriteLine("Type in # cups of Suger in pitcher [ENTER KEY]");
         }
 
         public int setCupsOfSugar()

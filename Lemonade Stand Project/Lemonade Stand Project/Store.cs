@@ -145,7 +145,8 @@ namespace Lemonade_Stand_Project
             inventory.showInventory();
             Console.WriteLine("What item would you like to purchase?");
             Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c.) sugar / d.) ice");
-            Console.WriteLine("Other Options: e.) bankrupt / f.) help / g.)exit [ENTER KEY]");
+            Console.WriteLine("Other Options:");
+            Console.WriteLine("e.)done buying / f.) get weather forecast / g.) bankrupt / h.) help / i.)exit [ENTER KEY]");
             inventory.addInventory();
         }
 

@@ -17,7 +17,7 @@ namespace Lemonade_Stand_Project
 
         public void askCupCharge()
         {
-            Console.WriteLine("How much would you like to charge a cup?");
+            Console.WriteLine("Type in how much you would like to charge a cup [ENTER KEY]");
         }
 
         public decimal setCupCharge()

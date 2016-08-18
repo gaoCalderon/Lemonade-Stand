@@ -33,11 +33,12 @@ namespace Lemonade_Stand_Project
             goIntoInventory.stockInventory();
         }
 
+        Weather w = new Weather();
 
         public void choiceOfDays()  //not done yet
         {
             Inventory enterInventory = new Inventory();
-            Console.WriteLine("Please choose how many number of days that you would like to sale lemonade for?");
+            Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
             Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
             string days = Console.ReadLine();
 
@@ -46,6 +47,7 @@ namespace Lemonade_Stand_Project
                 case "7":
                     while (this.day < this.numberOfDays)
                     {
+                        w.weatherForecast();
                         goToInventory();
 
                         //insert cycle of game play here (will repeat for 7days)
@@ -54,6 +56,7 @@ namespace Lemonade_Stand_Project
                 case "14":
                     while (this.day < this.twoWeeks)
                     {
+                        w.weatherForecast();
                         goToInventory();
 
                         //insert cycle of game play here (will repeat for 7days)
@@ -63,6 +66,7 @@ namespace Lemonade_Stand_Project
                 case "21":
                     while (this.day < this.threeWeeks)
                     {
+                        w.weatherForecast();
                         goToInventory();
 
                         //insert cycle of game play here (will repeat for 7days)
@@ -71,13 +75,14 @@ namespace Lemonade_Stand_Project
                 case "28":
                     while (this.day < this.twoWeeks)
                     {
+                        w.weatherForecast();
                         goToInventory();
 
                         //insert cycle of game play here (will repeat for 7days)
                     }
                     break;
                 default:
-                    Console.WriteLine("INVALID, please choose between 7, 14, 21, or 28");
+                    Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
                     choiceOfDays();
                     break;
             }

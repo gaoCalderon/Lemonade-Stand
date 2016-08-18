@@ -18,7 +18,7 @@ namespace Lemonade_Stand_Project
 
         public void askNumberOfLemons()
         {
-            Console.WriteLine("# of lemons in a pitcher?");
+            Console.WriteLine("Type in # of lemons a pitcher [ENTER KEY]");
         }
 
         public int setNumberOfLemons()
