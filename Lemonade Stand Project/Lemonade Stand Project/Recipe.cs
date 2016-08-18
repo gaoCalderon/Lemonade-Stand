@@ -17,7 +17,10 @@ namespace Lemonade_Stand_Project
         public void showRecipe()
         {
             Console.WriteLine("Price & Quality of Lemonade Stand");
-
+            Console.WriteLine("set cup charge: {0}", cp.getCupCharge());
+            Console.WriteLine("Lemons per Pictcher: {0}", l.getLemonPerPitcher());
+            Console.WriteLine("Sugar cup per picture: {0}", s.getSugarPerPitcher());
+            Console.WriteLine("Ice Cube per cup: {0}", i.getIceCubePerCup());
         }
 
         public void defaultRecipe()
@@ -26,14 +29,15 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("set cup charge: $0.25");
             Console.WriteLine("Lemons per Pitcher: 4");
             Console.WriteLine("Sugar cup per pitcher: 2");
-            Console.WriteLine("Ice cube per cup: 10");
+            Console.WriteLine("Ice Cube per cup: 10");
+            setDefaultRecipe();
         }
 
         public void setDefaultRecipe()
         {
             // insert math here of defaultCupCharge X random # of customers that actually purchased a cup in day
-            // insert math here of defaultUseLemon X # of pitchers made to serve 8 customers
-            // insert math here of defaultUseSugar X # of picchers made to serve 8 customers
+            defaultUseLemon();
+            defaultUseSugar();
             // insert math here of defaultUseIce X # of cups actually sold
         }
 

@@ -8,10 +8,28 @@ namespace Lemonade_Stand_Project
 {
     class Cups : Inventory
     {
+        public decimal cupCost;
 
         public void cupBought()
         {
             cups -= 1;
+        }
+
+        public void askCupCharge()
+        {
+            Console.WriteLine("How much would you like to charge a cup?");
+        }
+
+        public decimal setCupCharge()
+        {
+            string costInput = Console.ReadLine();
+            cupCost = decimal.Parse(costInput);
+            return cupCost;
+        }
+
+        public decimal getCupCharge()
+        {
+            return cupCost;
         }
 
         public void buy25Cups()

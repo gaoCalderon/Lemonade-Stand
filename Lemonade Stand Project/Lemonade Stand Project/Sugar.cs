@@ -9,9 +9,28 @@ namespace Lemonade_Stand_Project
     class Sugar : Inventory
     {
 
+        int cupsOfSugar;
+
         public void useSugar()
         {
             sugar -= 1;
+        }
+
+        public void askCupOfSugar()
+        {
+            Console.WriteLine("cups of Suger in pitcher?");
+        }
+
+        public int setCupsOfSugar()
+        {
+            string sugarInput = Console.ReadLine();
+            cupsOfSugar = int.Parse(sugarInput);
+            return cupsOfSugar;
+        }
+
+        public int getSugarPerPitcher()
+        {
+            return cupsOfSugar;
         }
 
         public void buy8cupSugar()

@@ -8,5 +8,12 @@ namespace Lemonade_Stand_Project
 {
     class Stand
     {
+
+        public void lemonadePitcher()
+        {
+
+        }
+
+
     }
 }

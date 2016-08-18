@@ -9,9 +9,28 @@ namespace Lemonade_Stand_Project
     class Lemons : Inventory
     {
 
+        int lemonNumber;
+
         public void useLemon()
         {
             lemons -= 1;
+        }
+
+        public void askNumberOfLemons()
+        {
+            Console.WriteLine("# of lemons in a pitcher?");
+        }
+
+        public int setNumberOfLemons()
+        {
+            string lemonInput = Console.ReadLine();
+            lemonNumber = int.Parse(lemonInput);
+            return lemonNumber;
+        }
+
+        public int getLemonPerPitcher()
+        {
+            return lemonNumber;
         }
 
         public void buy10Lemons()

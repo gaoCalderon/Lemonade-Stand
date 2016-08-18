@@ -8,9 +8,29 @@ namespace Lemonade_Stand_Project
 {
     class Ice : Inventory
     {
+
+        int numberOfIceCubes;
+
         public void useIceCube()
         {
             iceCubes -= 1;
+        }
+
+        public void askNumberofCubes()
+        {
+            Console.WriteLine("# of cubes per cup?");
+        }
+
+        public int setNumberCubesToCup()
+        {
+            string iceCubeInput = Console.ReadLine();
+            numberOfIceCubes = int.Parse(iceCubeInput);
+            return numberOfIceCubes;
+        }
+
+        public int getIceCubePerCup()
+        {
+            return numberOfIceCubes;
         }
 
         public void buy100iceCube()
