@@ -28,7 +28,7 @@ namespace Lemonade_Stand_Project
 
         public void goToInventory()
         {
-            Inventory goIntoInventory = new Inventory();
+            Recipe goIntoInventory = new Recipe();
             goIntoInventory.showInventory();
             goIntoInventory.stockInventory();
         }

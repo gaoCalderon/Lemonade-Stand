@@ -8,6 +8,9 @@ namespace Lemonade_Stand_Project
 {
     class Store
     {
+
+        Cups cup = new Cups();
+
         public void purchaseCups()
         {
             Console.WriteLine("How many cups do you want to buy?");
@@ -17,20 +20,17 @@ namespace Lemonade_Stand_Project
             string buy = Console.ReadLine();
             if (buy == "a")
             {
-                //insert return remaining subtraction amount from $20 bill
-
+                cup.buy25Cups();
                 keepBuyingCups();
             }
             else if (buy == "b")
             {
-                //insert return remaining subtraction amount from $20 bill
-
+                cup.buy50Cups();
                 keepBuyingCups();
             }
             else if (buy == "c")
             {
-                //insert return remaining subtraction amount from $20 bill
-
+                cup.buy100Cups();
                 keepBuyingCups();
             }
             else
@@ -51,19 +51,19 @@ namespace Lemonade_Stand_Project
             if (buy == "a")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingLemons();
             }
             else if (buy == "b")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingLemons();
             }
             else if (buy == "c")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingLemons();
             }
             else
@@ -83,19 +83,19 @@ namespace Lemonade_Stand_Project
             if (buy == "a")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingSugar();
             }
             else if (buy == "b")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingSugar();
             }
             else if (buy == "c")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingSugar();
             }
             else
@@ -115,19 +115,19 @@ namespace Lemonade_Stand_Project
             if (buy == "a")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingIce();
             }
             else if (buy == "b")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingIce();
             }
             else if (buy == "c")
             {
                 //insert return remaining subtraction amount from $20 bill
-
+                //insert return add of what was bought to inventory
                 keepBuyingIce();
             }
             else
@@ -139,7 +139,7 @@ namespace Lemonade_Stand_Project
 
         public void noMoreBuying()
         {
-            Inventory inventory = new Inventory();
+            Recipe inventory = new Recipe();
             inventory.showInventory();
             Console.WriteLine("What item would you like to purchase?");
             Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c.) sugar / d.) ice");
