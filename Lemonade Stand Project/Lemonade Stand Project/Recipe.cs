@@ -12,7 +12,7 @@ namespace Lemonade_Stand_Project
         Lemons l = new Lemons();
         Sugar s = new Sugar();
         Ice i = new Ice();
-        Customer cm = new Customer();
+        Consumer cm = new Consumer();
 
         public void showRecipe()
         {
@@ -43,7 +43,7 @@ namespace Lemonade_Stand_Project
 
         public void defaultCupCharge()
         {
-            money += 0.25m;
+            money += 0.25;
         }
 
         public void defaultUseLemon()

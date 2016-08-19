@@ -8,7 +8,7 @@ namespace Lemonade_Stand_Project
 {
     class Inventory
     {
-        public decimal money;
+        public double money;
         public int cups;
         public int lemons;
         public int sugar;
@@ -23,7 +23,7 @@ namespace Lemonade_Stand_Project
             this.iceCubes = 0;
         }
 
-        public decimal getMoney()
+        public double getMoney()
         {
             return this.money;
         }

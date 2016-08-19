@@ -8,11 +8,12 @@ namespace Lemonade_Stand_Project
 {
     class Cups : Inventory
     {
-        public decimal cupCost;
+        public double cupCost;
 
-        public void cupBought()
+        public void purchaseCup()
         {
             cups -= 1;
+            money += getCupCharge();
         }
 
         public void askCupCharge()
@@ -20,24 +21,24 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("Type in how much you would like to charge a cup [ENTER KEY]");
         }
 
-        public decimal setCupCharge()
+        public double setCupCharge()
         {
             string costInput = Console.ReadLine();
-            cupCost = decimal.Parse(costInput);
+            cupCost = double.Parse(costInput);
             return cupCost;
         }
 
-        public decimal getCupCharge()
+        public double getCupCharge()
         {
             return cupCost;
         }
 
         public void buy25Cups()
         {
-            if (getMoney() > 1.00m)
+            if (getMoney() > 1.00)
             {
                 cups += 25;
-                money -= 1.00m;
+                money -= 1.00;
             }
             else
             {
@@ -47,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy50Cups()
         {
-            if (getMoney() > 1.50m)
+            if (getMoney() > 1.50)
             {
                 cups += 50;
-                money -= 1.50m;
+                money -= 1.50;
             }
             else
             {
@@ -60,12 +61,16 @@ namespace Lemonade_Stand_Project
 
         public void buy100Cups()
         {
-            if (getMoney() > 2.80m)
+            if (getMoney() > 2.80)
             {
                 cups += 100;
-                money -= 2.80m;
+                money -= 2.80;
+            }
+            else
+            {
+                moneyNotEnough();
             }
         }
-   
+
     }
 }

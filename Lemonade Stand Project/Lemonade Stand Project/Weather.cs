@@ -26,7 +26,7 @@ namespace Lemonade_Stand_Project
         public int setRandomForecast()
         {
             Random f = new Random();
-            int setRanForecast = f.Next(1, 6);
+            int setRanForecast = f.Next(1, 10);
             return setRanForecast;
         }
 
@@ -56,6 +56,22 @@ namespace Lemonade_Stand_Project
             else if (results == 6)
             {
                 Console.WriteLine("Weather Forecast: Heavy Rains");
+            }
+            else if (results == 7)
+            {
+                Console.WriteLine("Weather Forecast: Clear, Sunny");
+            }
+            else if (results == 8)
+            {
+                Console.WriteLine("Weather Forecast: Light Overcast");
+            }
+            else if (results == 9)
+            {
+                Console.WriteLine("Weather Forecast: Bright and Sunny");
+            }
+            else if (results == 10)
+            {
+                Console.WriteLine("Weather Forecast: Sunny with high winds");
             }
             else
             {

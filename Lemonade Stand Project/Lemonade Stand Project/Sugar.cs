@@ -9,7 +9,7 @@ namespace Lemonade_Stand_Project
     class Sugar : Inventory
     {
 
-        int cupsOfSugar;
+        int SugarRecipiCount;
 
         public void useSugar()
         {
@@ -24,21 +24,21 @@ namespace Lemonade_Stand_Project
         public int setCupsOfSugar()
         {
             string sugarInput = Console.ReadLine();
-            cupsOfSugar = int.Parse(sugarInput);
-            return cupsOfSugar;
+            SugarRecipiCount = int.Parse(sugarInput);
+            return SugarRecipiCount;
         }
 
         public int getSugarPerPitcher()
         {
-            return cupsOfSugar;
+            return SugarRecipiCount;
         }
 
         public void buy8cupSugar()
         {
-            if (getMoney() > 0.80m)
+            if (getMoney() > 0.80)
             {
                 sugar += 8;
-                money -= 0.80m;
+                money -= 0.80;
             }
             else
             {
@@ -48,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy20cupSugar()
         {
-            if (getMoney() > 1.60m)
+            if (getMoney() > 1.60)
             {
                 sugar += 20;
-                money -= 1.60m;
+                money -= 1.60;
             }
             else
             {
@@ -61,10 +61,10 @@ namespace Lemonade_Stand_Project
 
         public void buy48cupSugar()
         {
-            if (getMoney() > 4.32m)
+            if (getMoney() > 4.32)
             {
                 sugar += 48;
-                money -= 4.32m;
+                money -= 4.32;
             }
             else
             {

@@ -9,11 +9,11 @@ namespace Lemonade_Stand_Project
     class Ice : Inventory
     {
 
-        int numberOfIceCubes;
+        int IceRecipiCount;
 
         public void useIceCube()
         {
-            iceCubes -= 1;
+            iceCubes -= getIceCubePerCup();
         }
 
         public void askNumberofCubes()
@@ -24,21 +24,21 @@ namespace Lemonade_Stand_Project
         public int setNumberCubesToCup()
         {
             string iceCubeInput = Console.ReadLine();
-            numberOfIceCubes = int.Parse(iceCubeInput);
-            return numberOfIceCubes;
+            IceRecipiCount = int.Parse(iceCubeInput);
+            return IceRecipiCount;
         }
 
         public int getIceCubePerCup()
         {
-            return numberOfIceCubes;
+            return IceRecipiCount;
         }
 
         public void buy100iceCube()
         {
-            if (getMoney() > 0.75m)
+            if (getMoney() > 0.75)
             {
                 iceCubes += 100;
-                money -= 0.75m;
+                money -= 0.75;
             }
             else
             {
@@ -48,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy250iceCube()
         {
-            if (getMoney() > 2.00m)
+            if (getMoney() > 2.00)
             {
                 iceCubes += 250;
-                money -= 2.00m;
+                money -= 2.00;
             }
             else
             {
@@ -61,10 +61,10 @@ namespace Lemonade_Stand_Project
 
         public void buy500iceCubes()
         {
-            if (getMoney() > 3.55m)
+            if (getMoney() > 3.55)
             {
                 iceCubes += 500;
-                money -= 3.55m;
+                money -= 3.55;
             }
             else
             {

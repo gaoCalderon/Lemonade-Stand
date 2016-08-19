@@ -35,7 +35,12 @@ namespace Lemonade_Stand_Project
 
         Weather w = new Weather();
 
+        public void plugInDayCycle()
+        {
+            w.getWeatherForecast();
+            goToInventory();
 
+        } 
 
         public void singleDayPath()  //not done yet
         {
@@ -48,9 +53,51 @@ namespace Lemonade_Stand_Project
                 case "7":
                     while (this.day < this.week)
                     {
+                        plugInDayCycle();
+                    }
+                    break;
+                case "14":
+                    while (this.day < this.twoWeeks)
+                    {
+                        plugInDayCycle();
+                    }
+                    break;
+
+                case "21":
+                    while (this.day < this.threeWeeks)
+                    {
+                        plugInDayCycle();
+                    }
+                    break;
+                case "28":
+                    while (this.day < this.fourthWeeks)
+                    {
+                        plugInDayCycle();
+                    }
+                    break;
+                default:
+                    Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
+                    singleDayPath();
+                    break;
+            }
+        }
+
+        public void doubleDayPay()
+        {
+            Inventory enterInventory = new Inventory();
+            Player player = new Player();
+            Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
+            Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
+            string days = Console.ReadLine();
+
+            switch (days)
+            {
+                case "7":
+                    while (this.day < this.week)
+                    {
 
                     }
-                    //create a method to be called inside here {}
+                    //create a method for two players to be called inside here {}
                     break;
                 case "14":
                     while (this.day < this.twoWeeks)
@@ -79,40 +126,6 @@ namespace Lemonade_Stand_Project
                     singleDayPath();
                     break;
             }
-        }
-
-        public void doubleDayPay()
-        {
-            Inventory enterInventory = new Inventory();
-            Player player = new Player();
-            Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
-            Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
-            string days = Console.ReadLine();
-
-            switch (days)
-            {
-                case "7":
-                    //repeat 7days
-                    //create a method for two players to be called inside here {}
-                    break;
-                case "14":
-                    //repeat 14days
-                    //use that method created for inside here{}
-                    break;
-
-                case "21":
-                    //repeat 21days
-                    //use that method created for inside here{}
-                    break;
-                case "28":
-                    //repeat 28days
-                    //use that method created for inside here{}
-                    break;
-                default:
-                    Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");
-                    singleDayPath();
-                    break;
-            }
 
         }
 
@@ -127,20 +140,32 @@ namespace Lemonade_Stand_Project
             switch (days)
             {
                 case "7":
-                    //repeat 7days
+                    while (this.day < this.week)
+                    {
+
+                    }
                     //create a method for human & ai players to be called inside here {}
                     break;
                 case "14":
-                    //repeat 14days
+                    while (this.day < this.twoWeeks)
+                    {
+
+                    }
                     //use that method created for inside here{}
                     break;
 
                 case "21":
-                    //repeat 21days
+                    while (this.day < this.threeWeeks)
+                    {
+
+                    }
                     //use that method created for inside here{}
                     break;
                 case "28":
-                    //repeat 28days
+                    while (this.day < this.fourthWeeks)
+                    {
+
+                    }
                     //use that method created for inside here{}
                     break;
                 default:
