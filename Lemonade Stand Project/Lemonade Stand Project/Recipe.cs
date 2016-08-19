@@ -14,6 +14,12 @@ namespace Lemonade_Stand_Project
         Ice i = new Ice();
         Consumer cm = new Consumer();
 
+        public void useRecipeMakePitcher()
+        {
+            l.useLemon();
+            s.useSugar();
+        }
+
         public void showRecipe()
         {
             Console.WriteLine("Price & Quality of Lemonade Stand");

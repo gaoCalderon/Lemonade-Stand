@@ -13,16 +13,46 @@ namespace Lemonade_Stand_Project
         Sugar sug = new Sugar();
         Ice ice = new Ice();
         Consumer con = new Consumer();
+        Recipe rec = new Recipe();
 
-        
-        public void makeAPitcherOfLemonade()
+        public int pitcher;
+
+        public void stand()
         {
-
+            this.pitcher = 8;
         }
 
-        public void pitcherSoldACup()
+        public int makePitcher()
         {
+            rec.useRecipeMakePitcher();
+            return pitcher;
+        }
 
+        public void checkHowMuchInPitcher()
+        {
+            string liquid = Console.ReadLine();
+            pitcher = int.Parse(liquid);
+            if (pitcher <= 0)
+            {
+                rec.useRecipeMakePitcher();
+                pitcher += 8;
+            }
+            else
+            {
+                pitcher -= 1;
+            }
+        }
+
+        public void PourDrink()
+        {
+            checkHowMuchInPitcher();
+        }
+
+        public void actionConsumerBuyRealCup()
+        {
+            cup.purchaseCup();
+            ice.useIceCube();
+            PourDrink();
         }
 
         

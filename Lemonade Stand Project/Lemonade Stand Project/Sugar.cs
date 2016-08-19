@@ -13,7 +13,7 @@ namespace Lemonade_Stand_Project
 
         public void useSugar()
         {
-            sugar -= 1;
+            sugar -= getSugarPerPitcher();
         }
 
         public void askCupOfSugar()

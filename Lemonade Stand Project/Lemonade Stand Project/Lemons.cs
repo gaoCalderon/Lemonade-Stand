@@ -13,7 +13,7 @@ namespace Lemonade_Stand_Project
 
         public void useLemon()
         {
-            lemons -= 1;
+            lemons -= getLemonPerPitcher();
         }
 
         public void askNumberOfLemons()
