@@ -64,7 +64,7 @@ namespace Lemonade_Stand_Project
             if (getMoney() > 3.75)
             {
                 lemons += 75;
-                money -= 3.75m;
+                money -= 3.75;
             }
             else
             {

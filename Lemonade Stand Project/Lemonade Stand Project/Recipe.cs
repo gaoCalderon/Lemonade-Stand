@@ -159,6 +159,7 @@ namespace Lemonade_Stand_Project
             string buyItem = Console.ReadLine();
             Store shopping = new Store();
             Weather w = new Weather();
+            Day d = new Day();
 
             switch (buyItem)
             {
@@ -182,7 +183,7 @@ namespace Lemonade_Stand_Project
                     shopping.noMoreBuying();
                     break;
                 case "g":
-                    //add link to end of game + results here
+                    Console.WriteLine("Begin Day {0}", d.day);
                     break;
                 case "h":
                     //add link tips/rule page at introductory

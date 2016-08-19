@@ -35,43 +35,43 @@ namespace Lemonade_Stand_Project
             int results = setRandomForecast();
             if (results == 1)
             {
-                Console.WriteLine("Weather Forecast: Sunny");
+                Console.WriteLine("Weather Forecast: Clear & Sunny");
             }
             else if (results == 2)
             {
-                Console.WriteLine("Weather Forcast: Partly Cloudy");
+                Console.WriteLine("Weather Forcast: Bright & Sunny");
             }
             else if (results == 3)
             {
-                Console.WriteLine("Weather Forcast: Partly Overcast with Light Rain");
+                Console.WriteLine("Weather Forcast: Sunny");
             }
             else if (results == 4)
             {
-                Console.WriteLine("Weather Forcast: All Day Overcast");
+                Console.WriteLine("Weather Forcast: Partly Cloudy");
             }
             else if (results == 5)
             {
-                Console.WriteLine("Weather Forcast: Rainy");
+                Console.WriteLine("Weather Forcast: Light Overcast");
             }
             else if (results == 6)
             {
-                Console.WriteLine("Weather Forecast: Heavy Rains");
+                Console.WriteLine("Weather Forecast: All Day Overcast");
             }
             else if (results == 7)
             {
-                Console.WriteLine("Weather Forecast: Clear, Sunny");
+                Console.WriteLine("Weather Forecast: Sun & Light Rains");
             }
             else if (results == 8)
             {
-                Console.WriteLine("Weather Forecast: Light Overcast");
+                Console.WriteLine("Weather Forecast: Sunny w/ high Winds");
             }
             else if (results == 9)
             {
-                Console.WriteLine("Weather Forecast: Bright and Sunny");
+                Console.WriteLine("Weather Forecast: Rainy");
             }
             else if (results == 10)
             {
-                Console.WriteLine("Weather Forecast: Sunny with high winds");
+                Console.WriteLine("Weather Forecast: Heavy Rainstorms");
             }
             else
             {
@@ -92,44 +92,11 @@ namespace Lemonade_Stand_Project
             return this.temperature;
         }
 
-        public void temperatureCall()
-        {
-            Console.WriteLine("Temperature in the hight: {0}F", GetDayTemperature());
-        }
-
         public void realDayTemperature()
         {
-            int results = setRandomTemperature();
-            if (results <= 72)
-            {
-                temperatureCall();
-            }
-            else if (results <= 79)
-            {
-                temperatureCall();
-            }
-            else if (results <= 86)
-            {
-                temperatureCall();
-            }
-            else if (results <= 93)
-            {
-                temperatureCall();
-            }
-            else if (results <= 100)
-            {
-                temperatureCall();
-            }
-            else if (results <= 107)
-            {
-                temperatureCall();
-            }
-            else
-            {
-                realDayTemperature();
-            }
+            setRandomForecast();
+            Console.WriteLine("Temperature in the hight: {0}F", GetDayTemperature());
         }
-
 
        public void weatherForecast()
         {

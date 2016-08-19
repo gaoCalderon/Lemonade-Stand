@@ -8,27 +8,77 @@ namespace Lemonade_Stand_Project
 {
     class Consumer
     {
-        public string customer;
-        public double cash;
+        public string customerName;
         public int temperatureAffect;
         public int weatherAffect;
 
-        public void Consumer(string customer)
+        Weather sky = new Weather();
+
+        public void Consumer(string CustomerName, int TemperatureAffect, int WeatherAffect)
         {
-            this.customer = customer;
-            this.cash = 2;
-            this.temperatureAffect = 0;
-            this.weatherAffect = 0;
+            this.customerName = CustomerName;
+            this.temperatureAffect = TemperatureAffect;
+            this.weatherAffect = WeatherAffect;
         }
 
-        public double getCash()
-        {
-            return this.cash;
-        }
 
         public void thirst()
         {
+            
+        }
 
+        public void demand()
+        {
+
+        }
+
+        public void consumerPreffer()
+        {
+            int results = sky.GetDayTemperature();
+            if (results <= 72)
+            {
+                int check = sky.getForecast();
+                if (check <= 3)
+                {
+                    thirst();
+                }
+                else
+                {
+                    demand();
+                }
+            }
+            else if (results <= 79)
+            {
+                int check = sky.getForecast();
+                if (check <= 4)
+                {
+                    thirst();
+                }
+                else
+                {
+                    demand();
+                }
+            }
+            else if (results <= 86)
+            {
+
+            }
+            else if (results <= 93)
+            {
+
+            }
+            else if (results <= 100)
+            {
+
+            }
+            else if (results <= 107)
+            {
+
+            }
+            else
+            {
+                consumerPreffer();
+            }
         }
 
 
