@@ -11,41 +11,23 @@ namespace Lemonade_Stand_Project
         public string name;
         public int temperatureAffect;
         public int weatherAffect;
+        public double demand;
 
         Weather sky = new Weather();
         Cups cup = new Cups();
         Stand sta = new Stand();
 
-        public Consumer(string Name, int TemperatureAffect, int WeatherAffect)
+        public Consumer(string Name, int TemperatureAffect, int WeatherAffect, double Demand)
         {
             this.name = Name;
             this.temperatureAffect = TemperatureAffect;
             this.weatherAffect = WeatherAffect;
+            this.demand = Demand;
         }
 
-
-        public void thirst()
-        {
-            sta.actionConsumerBuyRealCup();
-        }
-
-        public int makeNumberOFCustomersPerDay()
-        {
-            Random people = new Random();
-            int numberOfCustomers = people.Next(2, 62);
-            return numberOfCustomers;
-        }
-
-
-        public string getNumberOfCustomersInDay()
+        public string getCustomerName()
         {
             return name;
-        }
-
-        public int setPersonTempPrefer()
-        {
-            temperatureAffect = sky.setRandomTemperature();
-            return temperatureAffect;
         }
 
         public int getPersonTempPrefer()
@@ -53,17 +35,24 @@ namespace Lemonade_Stand_Project
             return temperatureAffect;
         }
 
-        public int setPersonForecastPrefer()
-        {
-            weatherAffect = sky.setRandomForecast();
-            return weatherAffect;
-        }
-
         public int getPersonForecastPrefer()
         {
             return weatherAffect;
         }
 
-        
+        public double demandPriceOfCup()
+        {
+            return demand;
+        }
+
+        public void ifThirsty()
+        {
+            double check = sky.getForecast;
+            if (check >= double.Parse.sta.Customers)
+            {
+
+            }
+        }
     }
+
 }

@@ -44,19 +44,19 @@ namespace Lemonade_Stand_Project
             }
             else if (results == 2)
             {
-                Console.WriteLine("Weather Forcast: Strong Overcast");
+                Console.WriteLine("Weather Forcast: Part Cloudy & Sunny");
             }
             else if (results == 3)
             {
-                Console.WriteLine("Weather Forcast: Light Rains");
+                Console.WriteLine("Weather Forcast: Strong Overcast");
             }
             else if (results == 4)
             {
-                Console.WriteLine("Weather Forcast: Rainy Day");
+                Console.WriteLine("Weather Forcast: Light Rains");
             }
             else if (results == 5)
             {
-                Console.WriteLine("Weather Forcast: Part Cloudy & Sunny");
+                Console.WriteLine("Weather Forcast: Rainy Day");
             }
             else
             {
@@ -67,7 +67,7 @@ namespace Lemonade_Stand_Project
         public int setRandomTemperature()
         {
             Random tempset = new Random();
-            int setTemp = tempset.Next(65, 107);
+            int setTemp = tempset.Next(63, 102);
             return setTemp;
         }
 
