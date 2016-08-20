@@ -35,10 +35,10 @@ namespace Lemonade_Stand_Project
 
         public void buy10Lemons()
         {
-            if (getMoney() > 1.00)
+            if (getTotalMoney() > 1.00)
             {
                 lemons += 10;
-                money -= 1.00;
+                totalMoney -= 1.00;
             }
             else
             {
@@ -48,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy30Lemons()
         {
-            if (getMoney() > 2.40)
+            if (getTotalMoney() > 2.40)
             {
                 lemons += 30;
-                money -= 2.40;
+                totalMoney -= 2.40;
             }
             else
             {
@@ -61,10 +61,10 @@ namespace Lemonade_Stand_Project
 
         public void buy75Lemons()
         {
-            if (getMoney() > 3.75)
+            if (getTotalMoney() > 3.75)
             {
                 lemons += 75;
-                money -= 3.75;
+                totalMoney -= 3.75;
             }
             else
             {

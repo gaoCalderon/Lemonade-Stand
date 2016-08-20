@@ -48,7 +48,7 @@ namespace Lemonade_Stand_Project
 
         public void defaultCupCharge()
         {
-            money += 0.25;
+            totalMoney += 0.25;
         }
 
         public void defaultUseLemon()
@@ -120,7 +120,7 @@ namespace Lemonade_Stand_Project
         public void showInventory()
         {
             Player person = new Player();
-            Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getMoney());
+            Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getTotalMoney());
             Console.WriteLine("{0} number of Cups", getCups());
             Console.WriteLine("{0} number of Lemons", getLemons());
             Console.WriteLine("{0} number cups of Sugar", getSugar());
@@ -175,14 +175,14 @@ namespace Lemonade_Stand_Project
                     shopping.purchaseIceCubes();
                     break;
                 case "e":
-                    Console.WriteLine("Day {0}", d.day);
+                    Console.WriteLine("Begin Day {0}", d.day);
                     break;
                 case "f":
                     w.getWeatherPrediction();
                     shopping.noMoreBuying();
                     break;
                 case "g":
-                    Console.WriteLine("Begin Day {0}", d.day);
+                    //link to end of game report then end
                     break;
                 case "h":
                     //add link tips/rule page at introductory

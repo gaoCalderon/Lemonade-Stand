@@ -20,7 +20,7 @@ namespace Lemonade_Stand_Project
         {
             cups -= 1;
             recordCupsSold += 1;
-            money += getCupCharge();
+            madeMoney += getCupCharge();
         }
 
         public void askCupCharge()
@@ -42,10 +42,10 @@ namespace Lemonade_Stand_Project
 
         public void buy25Cups()
         {
-            if (getMoney() > 1.00)
+            if (getTotalMoney() > 1.00)
             {
                 cups += 25;
-                money -= 1.00;
+                totalMoney -= 1.00;
             }
             else
             {
@@ -55,10 +55,10 @@ namespace Lemonade_Stand_Project
 
         public void buy50Cups()
         {
-            if (getMoney() > 1.50)
+            if (getTotalMoney() > 1.50)
             {
                 cups += 50;
-                money -= 1.50;
+                totalMoney -= 1.50;
             }
             else
             {
@@ -68,10 +68,10 @@ namespace Lemonade_Stand_Project
 
         public void buy100Cups()
         {
-            if (getMoney() > 2.80)
+            if (getTotalMoney() > 2.80)
             {
                 cups += 100;
-                money -= 2.80;
+                totalMoney -= 2.80;
             }
             else
             {

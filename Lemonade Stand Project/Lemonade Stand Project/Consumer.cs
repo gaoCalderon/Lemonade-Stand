@@ -75,7 +75,32 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        
+        public void customerAtLemonadeStand()
+        {
+            while (0 < sta.recordTotalCustomers)
+            {
+                setPersonForecastPrefer();
+                setPersonTempPrefer();
+                int referenceA = sky.getForecast();
+                if (referenceA <= weatherAffect)
+                {
+                    int referenceB = sky.GetDayTemperature();
+                    if (referenceB >= temperatureAffect)
+                    {
+                        sta.actionConsumerBuyRealCup();
+                    }
+                    else
+                    {
+                        setCustomerDemandPriceOfCup();
+                    }
+                    
+                }
+                else
+                {
+                    setCustomerDemandPriceOfCup();
+                }
+            }
+        }
 
 
 

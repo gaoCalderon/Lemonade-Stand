@@ -48,22 +48,16 @@ namespace Lemonade_Stand_Project
         {
             Game game = new Game();
             Day day = new Day();
-            Console.WriteLine("Number of players, Please TYPE either: 1, 2, or 1 and (play against computer) [ENTER KEY]");
-            string numberOfPlayers = Console.ReadLine();
-
-            if (numberOfPlayers == "1")
+            Console.WriteLine("How many number of players.");
+            Console.WriteLine("Please TYPE in a choice between: 1 or 2 (2 is to play against computer) [ENTER KEY]");
+            string input = Console.ReadLine();
+            int numberOfPlayers = int.Parse(input);
+            if (numberOfPlayers == 1)
             {
                 game.playerOne();
                 day.singleDayPath();
             }
-            else if (numberOfPlayers == "2")
-            {
-                game.playerOne();
-                game.playerTwo();
-                day.doubleDayPay();
-
-            }
-            else if (numberOfPlayers == "1 and")
+            else if (numberOfPlayers == 2)
             {
                 game.playerOne();
                 RandomAiName();

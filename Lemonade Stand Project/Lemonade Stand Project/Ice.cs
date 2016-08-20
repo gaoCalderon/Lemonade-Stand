@@ -35,10 +35,10 @@ namespace Lemonade_Stand_Project
 
         public void buy100iceCube()
         {
-            if (getMoney() > 0.75)
+            if (getTotalMoney() > 0.75)
             {
                 iceCubes += 100;
-                money -= 0.75;
+                totalMoney -= 0.75;
             }
             else
             {
@@ -48,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy250iceCube()
         {
-            if (getMoney() > 2.00)
+            if (getTotalMoney() > 2.00)
             {
                 iceCubes += 250;
-                money -= 2.00;
+                totalMoney -= 2.00;
             }
             else
             {
@@ -61,15 +61,23 @@ namespace Lemonade_Stand_Project
 
         public void buy500iceCubes()
         {
-            if (getMoney() > 3.55)
+            if (getTotalMoney() > 3.55)
             {
                 iceCubes += 500;
-                money -= 3.55;
+                totalMoney -= 3.55;
             }
             else
             {
                 moneyNotEnough();
             }
+        }
+
+        public int endDayNoIceCubes()
+        {
+            int one = iceCubes;
+            int two = iceCubes - one;
+            iceCubes = two;
+            return iceCubes;
         }
     }
 }

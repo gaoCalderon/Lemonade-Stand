@@ -35,10 +35,10 @@ namespace Lemonade_Stand_Project
 
         public void buy8cupSugar()
         {
-            if (getMoney() > 0.80)
+            if (getTotalMoney() > 0.80)
             {
                 sugar += 8;
-                money -= 0.80;
+                totalMoney -= 0.80;
             }
             else
             {
@@ -48,10 +48,10 @@ namespace Lemonade_Stand_Project
 
         public void buy20cupSugar()
         {
-            if (getMoney() > 1.60)
+            if (getTotalMoney() > 1.60)
             {
                 sugar += 20;
-                money -= 1.60;
+                totalMoney -= 1.60;
             }
             else
             {
@@ -61,10 +61,10 @@ namespace Lemonade_Stand_Project
 
         public void buy48cupSugar()
         {
-            if (getMoney() > 4.32)
+            if (getTotalMoney() > 4.32)
             {
                 sugar += 48;
-                money -= 4.32;
+                totalMoney -= 4.32;
             }
             else
             {

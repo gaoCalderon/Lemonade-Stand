@@ -24,6 +24,26 @@ namespace Lemonade_Stand_Project
         {
             Console.WriteLine("Welcome to Lemonade Stand");
             player.createPlayerMode();
+            Console.WriteLine("Would you like to play again? Yes/No [ENTER]");
+            replay();
+        }
+
+        public void replay()
+        {
+            string response = Console.ReadLine();
+            if (response == "yes")
+            {
+                runGame();
+            }
+            else if (response == "no")
+            {
+                Console.WriteLine("Come back and play again!");
+            }
+            else
+            {
+                Console.WriteLine("Would you like to play again? Yes/No [ENTER]");
+                replay();
+            }
         }
     }
 }

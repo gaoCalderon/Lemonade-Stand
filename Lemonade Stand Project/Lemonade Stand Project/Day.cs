@@ -36,6 +36,10 @@ namespace Lemonade_Stand_Project
         Weather w = new Weather();
         Stand s = new Stand();
         Player p = new Player();
+        Cups c = new Cups();
+        Inventory i = new Inventory();
+        Ice ice = new Ice();
+        Consumer cus = new Consumer("LemonadeStand", 82, 1, 0.25);
 
         public void plugInDayCycle()
         {
@@ -45,8 +49,15 @@ namespace Lemonade_Stand_Project
             w.realDayTemperature();
             s.setNumberOFCustomersPerDay();
             Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", p.getName());
-            Console.WriteLine("{0} of possible customers past {1}'s Lemondade Stand", s.getTotalNumberOfCustomers(), p.getName());
-            Console.WriteLine("");
+            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", s.getTotalNumberOfCustomers(), p.getName());
+            cus.customerAtLemonadeStand();
+            Console.WriteLine("{0} cups of Lemonade were sold today.", c.getCupsSold());
+            Console.WriteLine("{0} made ${1} today.", p.getName(), i.getMadeMoney());
+            i.addTotalMoneyMade();
+            i.runAfterAddTotalMoneyMade();
+            Console.WriteLine("{0} money total at the end of the day is ${1}", p.getName(), i.getTotalMoney());
+            Console.WriteLine("All your ice melted at the end of the day.");
+            ice.endDayNoIceCubes();
         } 
 
         public void singleDayPath()  //not done yet
@@ -62,11 +73,33 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
+                    double number = i.totalMoney;
+                    if (number >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 7 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 7 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                    }
                     break;
                 case "14":
                     while (this.day < this.twoWeeks)
                     {
                         plugInDayCycle();
+                    }
+                    double number1 = i.totalMoney;
+                    if (number1 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 14 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 14 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
                     }
                     break;
 
@@ -75,11 +108,33 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
+                    double number2 = i.totalMoney;
+                    if (number2 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 21 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 21 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                    }
                     break;
                 case "28":
                     while (this.day < this.fourthWeeks)
                     {
                         plugInDayCycle();
+                    }
+                    double number3 = i.totalMoney;
+                    if (number3 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 28 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 28 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
                     }
                     break;
                 default:
