@@ -12,6 +12,7 @@ namespace Lemonade_Stand_Project
         public int temperatureAffect;
         public int weatherAffect;
         public double demand;
+        public int recordNonBuyCustomers;
 
         Weather sky = new Weather();
         Cups cup = new Cups();
@@ -23,6 +24,7 @@ namespace Lemonade_Stand_Project
             this.temperatureAffect = TemperatureAffect;
             this.weatherAffect = WeatherAffect;
             this.demand = Demand;
+            this.recordNonBuyCustomers = 0;
         }
 
         public string getCustomerName()
@@ -35,24 +37,47 @@ namespace Lemonade_Stand_Project
             return temperatureAffect;
         }
 
+        public void setPersonTempPrefer()
+        {
+            temperatureAffect = sky.setRandomTemperature();
+        }
+
         public int getPersonForecastPrefer()
         {
             return weatherAffect;
         }
 
-        public double demandPriceOfCup()
+        public void setPersonForecastPrefer()
+        {
+            weatherAffect = sky.setRandomForecast();
+        }
+
+        public double getDemandPriceOfCup()
         {
             return demand;
         }
 
-        public void ifThirsty()
+        public int getCustomersNotBuy()
         {
-            double check = sky.getForecast;
-            if (check >= double.Parse.sta.Customers)
-            {
+            return recordNonBuyCustomers;
+        }
 
+        public void setCustomerDemandPriceOfCup()
+        {
+            double demand = cup.getCupCharge();
+            if (demand <= 0.18)
+            {
+                sta.actionConsumerBuyRealCup();
+            }
+            else
+            {
+                recordNonBuyCustomers += 1;
             }
         }
-    }
 
+        
+
+
+
+    }
 }

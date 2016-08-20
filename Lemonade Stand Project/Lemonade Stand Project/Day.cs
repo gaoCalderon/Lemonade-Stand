@@ -34,12 +34,19 @@ namespace Lemonade_Stand_Project
         }
 
         Weather w = new Weather();
+        Stand s = new Stand();
+        Player p = new Player();
 
         public void plugInDayCycle()
         {
-            w.getWeatherForecast();
+            w.getWeatherPrediction();
             goToInventory();
-
+            w.realDayForecast();
+            w.realDayTemperature();
+            s.setNumberOFCustomersPerDay();
+            Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", p.getName());
+            Console.WriteLine("{0} of possible customers past {1}'s Lemondade Stand", s.getTotalNumberOfCustomers(), p.getName());
+            Console.WriteLine("");
         } 
 
         public void singleDayPath()  //not done yet

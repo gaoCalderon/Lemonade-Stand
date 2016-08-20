@@ -9,10 +9,17 @@ namespace Lemonade_Stand_Project
     class Cups : Inventory
     {
         public double cupCost;
+        public int recordCupsSold;
+
+        public int getCupsSold()
+        {
+            return recordCupsSold;
+        }
 
         public void purchaseCup()
         {
             cups -= 1;
+            recordCupsSold += 1;
             money += getCupCharge();
         }
 

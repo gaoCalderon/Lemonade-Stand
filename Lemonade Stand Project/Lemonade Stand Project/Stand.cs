@@ -13,10 +13,12 @@ namespace Lemonade_Stand_Project
         Recipe rec = new Recipe();
 
         public int pitcher;
+        public int recordTotalCustomers;
 
         public void stand()
         {
             this.pitcher = 8;
+            this.recordTotalCustomers = 0;
         }
 
         public int getPicter()
@@ -55,11 +57,16 @@ namespace Lemonade_Stand_Project
             PourDrink();
         }
 
-        public int makeNumberOFCustomersPerDay()
+        public int getTotalNumberOfCustomers()
+        {
+            return recordTotalCustomers;
+        }
+
+        public int setNumberOFCustomersPerDay()
         {
             Random people = new Random();
-            int numberOfCustomers = people.Next(2, 62);
-            return numberOfCustomers;
+            recordTotalCustomers = people.Next(2, 62);
+            return recordTotalCustomers;
         }
 
         public void Customers()

@@ -13,6 +13,8 @@ namespace Lemonade_Stand_Project
         public int lemons;
         public int sugar;
         public int iceCubes;
+        public int possibleBuy;
+        public int numberOfSoldcups;
 
         public void inventoryProducts()
         {

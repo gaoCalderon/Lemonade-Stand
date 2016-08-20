@@ -95,7 +95,7 @@ namespace Lemonade_Stand_Project
            Console.WriteLine("in the highs of {0} degrees Fahrenheit", setRandomTemperature());
         }
 
-        public void getWeatherForecast()
+        public void getWeatherPrediction()
         {
             Console.WriteLine("Weather Forcast:");
             Console.WriteLine("Predicts: {0}", getForecast());

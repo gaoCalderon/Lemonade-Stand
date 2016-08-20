@@ -175,10 +175,10 @@ namespace Lemonade_Stand_Project
                     shopping.purchaseIceCubes();
                     break;
                 case "e":
-                    //add link to start game day cycle one
+                    Console.WriteLine("Day {0}", d.day);
                     break;
                 case "f":
-                    w.getWeatherForecast();
+                    w.getWeatherPrediction();
                     shopping.noMoreBuying();
                     break;
                 case "g":
