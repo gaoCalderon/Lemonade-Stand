@@ -17,10 +17,7 @@ namespace Lemonade_Stand_Project
             this.forecast = 0;
         }
 
-        public int getForecast()
-        {
-            return this.forecast;
-        }
+        
 
         public int forecastEqualRandomCall() 
 { 
@@ -97,10 +94,8 @@ namespace Lemonade_Stand_Project
 
         public void getWeatherPrediction()
         {
-            setRandomForecast();
-            setRandomTemperature();
             Console.WriteLine("Weather Forcast:");
-            Console.WriteLine("Predicts: {0}", getForecast());
+            Console.WriteLine("Forecaste: {0}", getForecast());
             Console.WriteLine("in the highs of {0} degrees Fahrenheit", GetDayTemperature());
         }
 

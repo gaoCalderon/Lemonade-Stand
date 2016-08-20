@@ -43,7 +43,7 @@ namespace Lemonade_Stand_Project
 
         public void plugInDayCycle()
         {
-            w.getWeatherPrediction();
+            w.weatherForecast();
             goToInventory();
             w.realDayForecast();
             w.realDayTemperature();
