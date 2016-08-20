@@ -10,7 +10,6 @@ namespace Lemonade_Stand_Project
     {
         Cups cup = new Cups();
         Ice ice = new Ice();
-        Consumer con = new Consumer();
         Recipe rec = new Recipe();
 
         public int pitcher;
@@ -56,9 +55,12 @@ namespace Lemonade_Stand_Project
             PourDrink();
         }
 
-        public void randomConsumer()
+        public void Customers()
         {
-            Random consumer = new Random();
+            Weather w = new Weather();
+            List<Consumer> customerList = new List<Consumer>();
+            customerList.Add(new Consumer("Angie Ling", 75, 1));
+
         }
 
 

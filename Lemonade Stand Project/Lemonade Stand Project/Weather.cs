@@ -19,14 +19,19 @@ namespace Lemonade_Stand_Project
 
         public int getForecast()
         {
-            this.forecast = setRandomForecast();
+            return this.forecast;
+        }
+
+        public int forecastEqualRandomCall() 
+{ 
+            forecast = setRandomForecast();
             return this.forecast;
         }
 
         public int setRandomForecast()
         {
             Random f = new Random();
-            int setRanForecast = f.Next(1, 10);
+            int setRanForecast = f.Next(1, 5);
             return setRanForecast;
         }
 
@@ -35,43 +40,23 @@ namespace Lemonade_Stand_Project
             int results = setRandomForecast();
             if (results == 1)
             {
-                Console.WriteLine("Weather Forecast: Clear & Sunny");
+                Console.WriteLine("Weather Forecast: Bright & Sunny");
             }
             else if (results == 2)
             {
-                Console.WriteLine("Weather Forcast: Bright & Sunny");
+                Console.WriteLine("Weather Forcast: Strong Overcast");
             }
             else if (results == 3)
             {
-                Console.WriteLine("Weather Forcast: Sunny");
+                Console.WriteLine("Weather Forcast: Light Rains");
             }
             else if (results == 4)
             {
-                Console.WriteLine("Weather Forcast: Partly Cloudy");
+                Console.WriteLine("Weather Forcast: Rainy Day");
             }
             else if (results == 5)
             {
-                Console.WriteLine("Weather Forcast: Light Overcast");
-            }
-            else if (results == 6)
-            {
-                Console.WriteLine("Weather Forecast: All Day Overcast");
-            }
-            else if (results == 7)
-            {
-                Console.WriteLine("Weather Forecast: Sun & Light Rains");
-            }
-            else if (results == 8)
-            {
-                Console.WriteLine("Weather Forecast: Sunny w/ high Winds");
-            }
-            else if (results == 9)
-            {
-                Console.WriteLine("Weather Forecast: Rainy");
-            }
-            else if (results == 10)
-            {
-                Console.WriteLine("Weather Forecast: Heavy Rainstorms");
+                Console.WriteLine("Weather Forcast: Part Cloudy & Sunny");
             }
             else
             {
@@ -88,7 +73,12 @@ namespace Lemonade_Stand_Project
 
         public int GetDayTemperature()
         {
-            this.temperature = setRandomTemperature();
+            return temperature;
+        }
+
+        public int temperatureEqualRandomCall()
+        { 
+            temperature = setRandomTemperature();
             return this.temperature;
         }
 

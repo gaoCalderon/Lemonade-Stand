@@ -12,7 +12,6 @@ namespace Lemonade_Stand_Project
         Lemons l = new Lemons();
         Sugar s = new Sugar();
         Ice i = new Ice();
-        Consumer cm = new Consumer();
 
         public void useRecipeMakePitcher()
         {

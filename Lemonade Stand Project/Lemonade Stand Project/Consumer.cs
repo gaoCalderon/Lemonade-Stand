@@ -8,15 +8,17 @@ namespace Lemonade_Stand_Project
 {
     class Consumer
     {
-        public string customerName;
+        public string name;
         public int temperatureAffect;
         public int weatherAffect;
 
         Weather sky = new Weather();
+        Cups cup = new Cups();
+        Stand sta = new Stand();
 
-        public void Consumer(string CustomerName, int TemperatureAffect, int WeatherAffect)
+        public Consumer(string Name, int TemperatureAffect, int WeatherAffect)
         {
-            this.customerName = CustomerName;
+            this.name = Name;
             this.temperatureAffect = TemperatureAffect;
             this.weatherAffect = WeatherAffect;
         }
@@ -24,63 +26,44 @@ namespace Lemonade_Stand_Project
 
         public void thirst()
         {
-            
+            sta.actionConsumerBuyRealCup();
         }
 
-        public void demand()
+        public int makeNumberOFCustomersPerDay()
         {
-
+            Random people = new Random();
+            int numberOfCustomers = people.Next(2, 62);
+            return numberOfCustomers;
         }
 
-        public void consumerPreffer()
+
+        public string getNumberOfCustomersInDay()
         {
-            int results = sky.GetDayTemperature();
-            if (results <= 72)
-            {
-                int check = sky.getForecast();
-                if (check <= 3)
-                {
-                    thirst();
-                }
-                else
-                {
-                    demand();
-                }
-            }
-            else if (results <= 79)
-            {
-                int check = sky.getForecast();
-                if (check <= 4)
-                {
-                    thirst();
-                }
-                else
-                {
-                    demand();
-                }
-            }
-            else if (results <= 86)
-            {
-
-            }
-            else if (results <= 93)
-            {
-
-            }
-            else if (results <= 100)
-            {
-
-            }
-            else if (results <= 107)
-            {
-
-            }
-            else
-            {
-                consumerPreffer();
-            }
+            return name;
         }
 
+        public int setPersonTempPrefer()
+        {
+            temperatureAffect = sky.setRandomTemperature();
+            return temperatureAffect;
+        }
 
+        public int getPersonTempPrefer()
+        {
+            return temperatureAffect;
+        }
+
+        public int setPersonForecastPrefer()
+        {
+            weatherAffect = sky.setRandomForecast();
+            return weatherAffect;
+        }
+
+        public int getPersonForecastPrefer()
+        {
+            return weatherAffect;
+        }
+
+        
     }
 }
