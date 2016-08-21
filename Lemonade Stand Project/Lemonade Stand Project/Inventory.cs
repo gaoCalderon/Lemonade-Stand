@@ -18,7 +18,7 @@ namespace Lemonade_Stand_Project
 
         public void inventoryProducts()
         {
-            this.totalMoney = 20;
+            this.totalMoney = 0;
             this.madeMoney = 0;
             this.testAddMoney = 0;
             this.cups = 0;
@@ -27,14 +27,21 @@ namespace Lemonade_Stand_Project
             this.iceCubes = 0;
         }
 
+        public double startMoney()
+        {
+            double cash = 20;
+            double totalMoney = cash;
+            return totalMoney;
+        }
+
         public double getTotalMoney()
         {
-            return this.totalMoney;
+            return totalMoney;
         }
 
         public double getMadeMoney()
         {
-            return this.madeMoney;
+            return madeMoney;
         }
 
         public double getTestAddMoney()

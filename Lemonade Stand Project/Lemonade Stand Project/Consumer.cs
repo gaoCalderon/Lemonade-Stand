@@ -49,7 +49,8 @@ namespace Lemonade_Stand_Project
 
         public void setPersonForecastPrefer()
         {
-            weatherAffect = sky.setRandomForecast();
+            sky.ConsumerRandomChoice();
+            weatherAffect = sky.getTemperature();
         }
 
         public double getDemandPriceOfCup()
@@ -81,10 +82,10 @@ namespace Lemonade_Stand_Project
             {
                 setPersonForecastPrefer();
                 setPersonTempPrefer();
-                int referenceA = sky.getForecast();
+                int referenceA = sky.getForecastNumber();
                 if (referenceA <= weatherAffect)
                 {
-                    int referenceB = sky.GetDayTemperature();
+                    int referenceB = sky.getTemperature();
                     if (referenceB >= temperatureAffect)
                     {
                         sta.actionConsumerBuyRealCup();

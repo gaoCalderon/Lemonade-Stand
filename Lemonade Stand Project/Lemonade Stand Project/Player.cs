@@ -44,10 +44,13 @@ namespace Lemonade_Stand_Project
             return choice;
         }
 
+
+
         public void createPlayerMode()
         {
             Game game = new Game();
             Day day = new Day();
+            Inventory inv = new Inventory();
             Console.WriteLine("How many number of players.");
             Console.WriteLine("Please TYPE in a choice between: 1 or 2 (2 is to play against computer) [ENTER KEY]");
             string input = Console.ReadLine();
@@ -55,6 +58,7 @@ namespace Lemonade_Stand_Project
             if (numberOfPlayers == 1)
             {
                 game.playerOne();
+                inv.startMoney();
                 day.singleDayPath();
             }
             else if (numberOfPlayers == 2)

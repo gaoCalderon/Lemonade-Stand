@@ -48,7 +48,6 @@
     <Compile Include="Day.cs" />
     <Compile Include="FileRead.cs" />
     <Compile Include="FileWriter.cs" />
-    <Compile Include="FixClass.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="Ice.cs" />
     <Compile Include="Interface1.cs" />

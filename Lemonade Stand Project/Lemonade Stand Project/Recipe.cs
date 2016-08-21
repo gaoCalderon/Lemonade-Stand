@@ -137,7 +137,7 @@ namespace Lemonade_Stand_Project
                 Console.WriteLine("What would you like to purchase?");
                 Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
                 Console.WriteLine("Other Options:");
-                Console.WriteLine("e.)done buying / f.) get weather forecast g.) bankrupt / h.) help / i.)exit [ENTER KEY]");
+                Console.WriteLine("e.)done buying / f.) get weather prediction g.) bankrupt / h.) help / i.)exit [ENTER KEY]");
                 addInventory();
             }
             else if (userchoice == "no")
@@ -178,7 +178,9 @@ namespace Lemonade_Stand_Project
                     Console.WriteLine("Begin Day {0}", d.day);
                     break;
                 case "f":
-                    w.getWeatherPrediction();
+                    w.getPrdictWeather();
+                    Console.WriteLine("[ENTER]");
+                    Console.ReadLine();
                     shopping.noMoreBuying();
                     break;
                 case "g":
