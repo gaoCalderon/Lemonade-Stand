@@ -105,7 +105,7 @@ namespace Lemonade_Stand_Project
 
         public void aiCustomerAtLemonadeStand()
         {
-            while (0 < Stand.recordTotalCustomers)
+            while (0 < Stand.aiRecordTotalCustomers)
             {
                 setPersonForecastPrefer();
                 setPersonTempPrefer();

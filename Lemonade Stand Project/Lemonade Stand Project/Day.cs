@@ -14,6 +14,8 @@ namespace Lemonade_Stand_Project
         public int twoWeeks;
         public int threeWeeks;
         public int fourthWeeks;
+        string days;
+
 
 
         public Day()
@@ -74,11 +76,11 @@ namespace Lemonade_Stand_Project
             Console.Read();
         } 
 
-        public void singleDayPath()  //not done yet
+        public void singleDayPath()
         {
             Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
             Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
-            string days = Console.ReadLine();
+            days = Console.ReadLine();
 
             switch (days)
             {
@@ -177,7 +179,7 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", Stand.recordTotalCustomers, Player.name);
             Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", Stand.aiRecordTotalCustomers, Player.aiName);
             Console.WriteLine("[ENTER]");
-            Console.Read();
+            Console.ReadLine();
             cus.customerAtLemonadeStand();
             cus.aiCustomerAtLemonadeStand();
             Console.WriteLine("{0} cups of {1} Lemonade were sold today.", Cups.recordCupsSold, Player.name);

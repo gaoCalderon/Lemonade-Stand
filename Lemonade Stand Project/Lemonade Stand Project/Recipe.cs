@@ -14,6 +14,7 @@ namespace Lemonade_Stand_Project
         Ice i = new Ice();
 
         string choice;
+        string buyItem;
 
         public void useRecipeMakePitcher()
         {
@@ -85,7 +86,7 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("Please set Price & Quality?");
             setChangeCupCharges();
             setChangeLemonRecipe();
-            setChangeLemonRecipe();
+            setChangeSugarRecipe();
             setChangeIceRecipe();
         }
 
@@ -169,10 +170,9 @@ namespace Lemonade_Stand_Project
             }
         }
 
-
         public void addInventory()
         {
-            string buyItem = Console.ReadLine();
+            buyItem = Console.ReadLine();
             Store shopping = new Store();
             Weather w = new Weather();
             Day d = new Day();
@@ -200,6 +200,7 @@ namespace Lemonade_Stand_Project
                     break;
                 default:
                     Console.WriteLine("INVALID - choices are: cups, lemons, sugar, ice, bankrupt, help");
+                    addInventory();
                     break;
             }
         }

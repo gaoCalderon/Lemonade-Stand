@@ -10,6 +10,7 @@ namespace Lemonade_Stand_Project
     {
         public static string name;
         public static string aiName;
+        int fill;
 
         public void SetName()
         {
@@ -20,24 +21,30 @@ namespace Lemonade_Stand_Project
         public void RandomAiName()
         {
             Random ai = new Random();
-            aiName = Console.ReadLine();
-            switch (aiName)
+            fill = ai.Next(1, 4);
+            switch (fill)
             {
-                case "Max":
+                case 1:
+                    aiName = "Max";
+                    Console.WriteLine("Computer Player: {0}", aiName);
                     break;
-                case "Jay":
+                case 2:
+                    aiName = "Jay";
+                    Console.WriteLine("Computer Player: {0}", aiName);
                     break;
-                case "Tiffany":
+                case 3:
+                    aiName = "Tiffany";
+                    Console.WriteLine("Computer Player: {0}", aiName);
                     break;
-                case "Mini":
+                case 4:
+                    aiName = "Mini";
+                    Console.WriteLine("Computer Player: {0}", aiName);
                     break;
                 default:
                     RandomAiName();
                     break;
             }
         }
-
-
 
         public void createPlayerMode()
         {
@@ -52,6 +59,7 @@ namespace Lemonade_Stand_Project
             {
                 SetName();
                 Inventory.totalMoney = 20;
+                Console.WriteLine("Welcome {0} to Lemonade Stand", name);
                 day.singleDayPath();
             }
             else if (numberOfPlayers == 2)
@@ -59,6 +67,8 @@ namespace Lemonade_Stand_Project
                 SetName();
                 RandomAiName();
                 Inventory.totalMoney = 20;
+                Inventory.aiTotalMoney = 20;
+                Console.WriteLine("Welcome {0} & {1} to Lemonade Stand", name, aiName);
                 day.humanAiDayPath();
             }
             else

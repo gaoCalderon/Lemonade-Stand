@@ -8,7 +8,7 @@ namespace Lemonade_Stand_Project
 {
     class Game
     {
-
+        string response;
         
         public void runGame()
         {
@@ -21,7 +21,7 @@ namespace Lemonade_Stand_Project
 
         public void replay()
         {
-            string response = Console.ReadLine();
+            response = Console.ReadLine();
             if (response == "yes")
             {
                 runGame();
