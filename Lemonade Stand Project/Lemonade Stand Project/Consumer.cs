@@ -78,7 +78,7 @@ namespace Lemonade_Stand_Project
 
         public void customerAtLemonadeStand()
         {
-            while (0 < sta.recordTotalCustomers)
+            while (0 < Stand.recordTotalCustomers)
             {
                 setPersonForecastPrefer();
                 setPersonTempPrefer();
@@ -103,7 +103,32 @@ namespace Lemonade_Stand_Project
             }
         }
 
+        public void aiCustomerAtLemonadeStand()
+        {
+            while (0 < Stand.recordTotalCustomers)
+            {
+                setPersonForecastPrefer();
+                setPersonTempPrefer();
+                int referenceA = sky.getForecastNumber();
+                if (referenceA <= weatherAffect)
+                {
+                    int referenceB = sky.getTemperature();
+                    if (referenceB >= temperatureAffect)
+                    {
+                        sta.aiActionConsumerBuyRealCup();
+                    }
+                    else
+                    {
+                        setCustomerDemandPriceOfCup();
+                    }
 
+                }
+                else
+                {
+                    setCustomerDemandPriceOfCup();
+                }
+            }
+        }
 
     }
 }

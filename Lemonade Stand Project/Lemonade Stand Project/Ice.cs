@@ -30,11 +30,11 @@ namespace Lemonade_Stand_Project
 
         public void buy100iceCube()
         {
-            if (getTotalMoney() > 0.75)
+            if (totalMoney > 0.75)
             {
                 iceCubes += 100;
                 totalMoney -= 0.75;
-                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left.", Player.name, totalMoney);
             }
             else
             {
@@ -44,11 +44,11 @@ namespace Lemonade_Stand_Project
 
         public void buy250iceCube()
         {
-            if (getTotalMoney() > 2.00)
+            if (totalMoney > 2.00)
             {
                 iceCubes += 250;
                 totalMoney -= 2.00;
-                Console.WriteLine("{0} has ${1} left", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -58,11 +58,11 @@ namespace Lemonade_Stand_Project
 
         public void buy500iceCubes()
         {
-            if (getTotalMoney() > 3.55)
+            if (totalMoney > 3.55)
             {
                 iceCubes += 500;
                 totalMoney -= 3.55;
-                Console.WriteLine("{0} has ${1} left", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -76,6 +76,14 @@ namespace Lemonade_Stand_Project
             int two = iceCubes - one;
             iceCubes = two;
             return iceCubes;
+        }
+
+        public int aiEndDayNoIceCubes()
+        {
+            int one = aiIceCubes;
+            int two = aiIceCubes - one;
+            aiIceCubes = two;
+            return aiIceCubes;
         }
     }
 }

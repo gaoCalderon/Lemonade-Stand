@@ -49,12 +49,13 @@ namespace Lemonade_Stand_Project
             goToInventory();
             Console.WriteLine("[ENTER]");
             Console.Read();
+            Console.WriteLine("Begin Day {0}", this.day);
             w.setweatherForecast();
             s.setNumberOFCustomersPerDay();
             Console.WriteLine("[ENTER]");
             Console.Read();
             Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", Player.name);
-            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", s.getTotalNumberOfCustomers(), Player.name);
+            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", Stand.recordTotalCustomers, Player.name);
             Console.WriteLine("[ENTER]");
             Console.Read();
             cus.customerAtLemonadeStand();
@@ -157,6 +158,49 @@ namespace Lemonade_Stand_Project
             }
         }
 
+        public void plugInHumanAiDayCycle()
+        {
+            w.setPredictWeather();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            goToInventory();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            Console.WriteLine("Begin Day {0}", this.day);
+            w.setweatherForecast();
+            s.setNumberOFCustomersPerDay();
+            s.setAiNumberOFCustomersPerDay();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", Player.name);
+            Console.WriteLine("{0}'s stand also sold Lemonade for 6 hours", Player.aiName);
+            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", Stand.recordTotalCustomers, Player.name);
+            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", Stand.aiRecordTotalCustomers, Player.aiName);
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            cus.customerAtLemonadeStand();
+            cus.aiCustomerAtLemonadeStand();
+            Console.WriteLine("{0} cups of {1} Lemonade were sold today.", Cups.recordCupsSold, Player.name);
+            Console.WriteLine("{0} cups of {1} Lemonade were sold today.", Cups.aiRecordCupsSold, Player.aiName);
+            Console.WriteLine("{0} made ${1} today.", Player.name, Inventory.madeMoney);
+            Console.WriteLine("{0} made ${1} today.", Player.aiName, Inventory.aiMadeMoney);
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            i.addTotalMoneyMade();
+            i.aiAddTotalMoneyMade();
+            i.runAfterAddTotalMoneyMade();
+            i.aiRunAfterAddTotalMoneyMade();
+            Console.WriteLine("{0} money total at the end of the day is ${1}", Player.name, Inventory.totalMoney);
+            Console.WriteLine("{0} money total at the end of the day is ${1}", Player.aiName, Inventory.aiTotalMoney);
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+            Console.WriteLine("All the ice melted at the end of the day.");
+            ice.endDayNoIceCubes();
+            ice.aiEndDayNoIceCubes();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+        }
+
         public void humanAiDayPath()
         {
             Inventory enterInventory = new Inventory();
@@ -170,31 +214,175 @@ namespace Lemonade_Stand_Project
                 case "7":
                     while (this.day < this.week)
                     {
-
+                        plugInHumanAiDayCycle();
                     }
-                    //create a method for human & ai players to be called inside here {}
+                    double ab = Inventory.totalMoney;
+                    if (ab >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 7 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 7 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    double abc = Inventory.aiTotalMoney;
+                    if (abc >= 20)
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 7 days, {0} profited ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    else
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 7 days, {0} lost ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    double abcd = Inventory.testAddMoney;
+                    if (abcd > Inventory.aiTestAddMoney)
+                    {
+                        i.humanMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.name, Player.aiName, Inventory.humanScore);
+                    }
+                    else if (abcd < Inventory.aiTestAddMoney)
+                    {
+                        i.computerMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.aiName, Player.name, Inventory.computerScore);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tie Game, both {0} and {1} made equally the same amount.", Player.name, Player.aiName);
+                    }
                     break;
                 case "14":
                     while (this.day < this.twoWeeks)
                     {
-
+                        plugInHumanAiDayCycle();
                     }
-                    //use that method created for inside here{}
+                    double ab1 = Inventory.totalMoney;
+                    if (ab1 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 14 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 14 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    double abc1 = Inventory.aiTotalMoney;
+                    if (abc1 >= 20)
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 14 days, {0} profited ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    else
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 14 days, {0} lost ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    double abcd1 = Inventory.testAddMoney;
+                    if (abcd1 > Inventory.aiTestAddMoney)
+                    {
+                        i.humanMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.name, Player.aiName, Inventory.humanScore);
+                    }
+                    else if (abcd1 < Inventory.aiTestAddMoney)
+                    {
+                        i.computerMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.aiName, Player.name, Inventory.computerScore);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tie Game, both {0} and {1} made equally the same amount.", Player.name, Player.aiName);
+                    }
                     break;
 
                 case "21":
                     while (this.day < this.threeWeeks)
                     {
-
+                        plugInHumanAiDayCycle();
                     }
-                    //use that method created for inside here{}
+                    double ab2 = Inventory.totalMoney;
+                    if (ab2 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 21 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 21 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    double abc2 = Inventory.aiTotalMoney;
+                    if (abc2 >= 20)
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 21 days, {0} profited ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    else
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 21 days, {0} lost ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    double abcd2 = Inventory.testAddMoney;
+                    if (abcd2 > Inventory.aiTestAddMoney)
+                    {
+                        i.humanMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.name, Player.aiName, Inventory.humanScore);
+                    }
+                    else if (abcd2 < Inventory.aiTestAddMoney)
+                    {
+                        i.computerMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.aiName, Player.name, Inventory.computerScore);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tie Game, both {0} and {1} made equally the same amount.", Player.name, Player.aiName);
+                    }
                     break;
                 case "28":
                     while (this.day < this.fourthWeeks)
                     {
-
+                        plugInHumanAiDayCycle();
                     }
-                    //use that method created for inside here{}
+                    double ab3 = Inventory.totalMoney;
+                    if (ab3 >= 20)
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 28 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    else
+                    {
+                        i.profit();
+                        Console.WriteLine("At the end of 28 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
+                    }
+                    double abc3 = Inventory.aiTotalMoney;
+                    if (abc3 >= 20)
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 28 days, {0} profited ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    else
+                    {
+                        i.aiProfit();
+                        Console.WriteLine("At the end of 28 days, {0} lost ${1}", Player.aiName, Inventory.aiTestAddMoney);
+                    }
+                    double abcd3 = Inventory.testAddMoney;
+                    if (abcd3 > Inventory.aiTestAddMoney)
+                    {
+                        i.humanMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.name, Player.aiName, Inventory.humanScore);
+                    }
+                    else if (abcd3 < Inventory.aiTestAddMoney)
+                    {
+                        i.computerMore();
+                        Console.WriteLine("{0} made more than {1} by ${2}", Player.aiName, Player.name, Inventory.computerScore);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Tie Game, both {0} and {1} made equally the same amount.", Player.name, Player.aiName);
+                    }
                     break;
                 default:
                     Console.WriteLine("INVALID, please input either: 7, 14, 21, or 28");

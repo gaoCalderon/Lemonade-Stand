@@ -9,11 +9,11 @@ namespace Lemonade_Stand_Project
     class Sugar : Inventory
     {
 
-        int SugarRecipiCount;
+        public static int SugarRecipiCount;
 
         public void useSugar()
         {
-            sugar -= getSugarPerPitcher();
+            sugar -= SugarRecipiCount;
         }
 
         public void askCupOfSugar()
@@ -28,17 +28,13 @@ namespace Lemonade_Stand_Project
             return SugarRecipiCount;
         }
 
-        public int getSugarPerPitcher()
-        {
-            return SugarRecipiCount;
-        }
-
         public void buy8cupSugar()
         {
-            if (getTotalMoney() > 0.80)
+            if (totalMoney > 0.80)
             {
                 sugar += 8;
                 totalMoney -= 0.80;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -48,10 +44,11 @@ namespace Lemonade_Stand_Project
 
         public void buy20cupSugar()
         {
-            if (getTotalMoney() > 1.60)
+            if (totalMoney > 1.60)
             {
                 sugar += 20;
                 totalMoney -= 1.60;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -61,10 +58,11 @@ namespace Lemonade_Stand_Project
 
         public void buy48cupSugar()
         {
-            if (getTotalMoney() > 4.32)
+            if (totalMoney > 4.32)
             {
                 sugar += 48;
                 totalMoney -= 4.32;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {

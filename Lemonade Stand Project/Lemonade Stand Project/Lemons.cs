@@ -9,11 +9,11 @@ namespace Lemonade_Stand_Project
     class Lemons : Inventory
     {
 
-        int lemonRecipiCount;
+        public static int lemonRecipiCount;
 
         public void useLemon()
         {
-            lemons -= getLemonPerPitcher();
+            lemons -= lemonRecipiCount;
         }
 
         public void askNumberOfLemons()
@@ -28,17 +28,13 @@ namespace Lemonade_Stand_Project
             return lemonRecipiCount;
         }
 
-        public int getLemonPerPitcher()
-        {
-            return lemonRecipiCount;
-        }
-
         public void buy10Lemons()
         {
-            if (getTotalMoney() > 1.00)
+            if (totalMoney > 1.00)
             {
                 lemons += 10;
                 totalMoney -= 1.00;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -48,10 +44,11 @@ namespace Lemonade_Stand_Project
 
         public void buy30Lemons()
         {
-            if (getTotalMoney() > 2.40)
+            if (totalMoney > 2.40)
             {
                 lemons += 30;
                 totalMoney -= 2.40;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {
@@ -61,10 +58,11 @@ namespace Lemonade_Stand_Project
 
         public void buy75Lemons()
         {
-            if (getTotalMoney() > 3.75)
+            if (totalMoney > 3.75)
             {
                 lemons += 75;
                 totalMoney -= 3.75;
+                Console.WriteLine("{0} has ${1} left", Player.name, totalMoney);
             }
             else
             {

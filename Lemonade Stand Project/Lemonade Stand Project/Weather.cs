@@ -51,31 +51,6 @@ namespace Lemonade_Stand_Project
             }
         }
 
-        //public void setForecast()
-        //{
-        //    switch (forecast)
-        //    {
-        //        case 1:
-        //            Console.WriteLine("Forecast: Bright & Sunny");
-        //            break;
-        //        case 2:
-        //            Console.WriteLine("Forecast: Part Cloudy & Sunny");
-        //            break;
-        //        case 3:
-        //            Console.WriteLine("Forecast: Strong Overcast");
-        //            break;
-        //        case 4:
-        //            Console.WriteLine("Forecast: Light Rains");
-        //            break;
-        //        case 5:
-        //            Console.WriteLine("forecast: Rainy Day");
-        //            break;
-        //        default:
-        //            setForecast();
-        //            break;
-        //    }
-        //}
-
         public int getTemperature()
         {
             temperature = setRandomTemperature();

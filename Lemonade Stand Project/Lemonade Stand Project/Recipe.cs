@@ -25,47 +25,35 @@ namespace Lemonade_Stand_Project
         {
             Console.WriteLine("Price & Quality of Lemonade Stand");
             Console.WriteLine("set cup charge: {0}", Cups.cupCost);
-            Console.WriteLine("Lemons per Pictcher: {0}", l.getLemonPerPitcher());
-            Console.WriteLine("Sugar cup per picture: {0}", s.getSugarPerPitcher());
+            Console.WriteLine("Lemons per Pictcher: {0}", Lemons.lemonRecipiCount);
+            Console.WriteLine("Sugar cup per picture: {0}", Sugar.SugarRecipiCount);
             Console.WriteLine("Ice Cube per cup: {0}", Ice.IceRecipiCount);
         }
 
-        public void defaultRecipe()
+        public void aiDefaultRecipe()
         {
             Console.WriteLine("Price & Quality of Lemonade Stand");
             Console.WriteLine("set cup charge: $0.25");
             Console.WriteLine("Lemons per Pitcher: 4");
             Console.WriteLine("Sugar cup per pitcher: 2");
             Console.WriteLine("Ice Cube per cup: 10");
-            setDefaultRecipe();
         }
 
-        public void setDefaultRecipe()
+
+        public void aiDefaultCupCharge()
         {
-            // insert math here of defaultCupCharge X random # of customers that actually purchased a cup in day
-            defaultUseLemon();
-            defaultUseSugar();
-            // insert math here of defaultUseIce X # of cups actually sold
+            aiTotalMoney += 0.25;
         }
 
-        public void defaultCupCharge()
+        public void aiDefaultUseRecipe()
         {
-            totalMoney += 0.25;
+            aiLemons -= 4;
+            aiSugar -= 2;
         }
 
-        public void defaultUseLemon()
+        public void aiDefaultUseIce()
         {
-            lemons -= 4;
-        }
-
-        public void defaultUseSugar()
-        {
-            sugar -= 2;
-        }
-
-        public void defaultUseIce()
-        {
-            iceCubes -= 10;
+            aiIceCubes -= 10;
         }
 
         public void setChangeLemonRecipe()
@@ -94,41 +82,51 @@ namespace Lemonade_Stand_Project
 
         public void playerSetRecipe()
         {
-            defaultRecipe();
-            Console.WriteLine("How do you want to set your Price & Quality?");
-            Console.WriteLine("Do you want to use the defualt settings above or make changes?");
-            Console.WriteLine("Please type in one: keep /change [ENTER KEY]");
-            keepChange();
-        }
-
-        public void keepChange()
-        {
-            choice = Console.ReadLine();
-            if (choice == "keep")
-            {
-                setDefaultRecipe();
-            }
-            else if (choice == "change")
-            {
-                setChangeLemonRecipe();
-            }
-            else
-            {
-                Console.WriteLine("INVALID, Please type in either choice: keep / change [ENTER KEY]");
-                keepChange();
-            }
+            Console.WriteLine("Please set Price & Quality?");
+            setChangeCupCharges();
+            setChangeLemonRecipe();
+            setChangeLemonRecipe();
+            setChangeIceRecipe();
         }
 
         public void showInventory()
         {
             Player person = new Player();
             Console.WriteLine("{0} currently have ${1} avaialbe", Player.name, Inventory.totalMoney);
-            Console.WriteLine("{0} number of Cups", getCups());
-            Console.WriteLine("{0} number of Lemons", getLemons());
-            Console.WriteLine("{0} number cups of Sugar", getSugar());
-            Console.WriteLine("{0} number of Ice Cubes", getIceCubes());
+            Console.WriteLine("{0} number of Cups", Inventory.cups);
+            Console.WriteLine("{0} number of Lemons", Inventory.lemons);
+            Console.WriteLine("{0} number cups of Sugar", Inventory.sugar);
+            Console.WriteLine("{0} number of Ice Cubes", Inventory.iceCubes);
             Console.WriteLine("[ENTER]");
             Console.Read();
+        }
+
+        public void aiShowInventory()
+        {
+            Player person = new Player();
+            Console.WriteLine("{0} currently have ${1} avaialbe", Player.aiName, Inventory.aiTotalMoney);
+            Console.WriteLine("{0} number of Cups", Inventory.aiCups);
+            Console.WriteLine("{0} number of Lemons", Inventory.aiLemons);
+            Console.WriteLine("{0} number cups of Sugar", Inventory.aiSugar);
+            Console.WriteLine("{0} number of Ice Cubes", Inventory.aiIceCubes);
+            Console.WriteLine("[ENTER]");
+            Console.Read();
+        }
+
+        public void aiStockInventory()
+        {
+            aiCups += 100;
+            aiTotalMoney -= 2.80;
+            aiLemons += 75;
+            aiTotalMoney -= 3.75;
+            aiSugar += 48;
+            aiTotalMoney -= 4.32;
+            aiIceCubes += 100;
+            aiTotalMoney -= 0.75;
+            aiIceCubes += 100;
+            aiTotalMoney -= 0.75;
+            aiIceCubes += 100;
+            aiTotalMoney -= 0.75;
         }
 
         public void stockInventory()
@@ -141,10 +139,24 @@ namespace Lemonade_Stand_Project
                 Console.WriteLine("What would you like to purchase?");
                 Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
                 Console.WriteLine("Other Options:");
-                Console.WriteLine("e.)done buying / f.) get weather prediction / g.)exit [ENTER KEY]");
+                Console.WriteLine("e.)done buying / f.)exit [ENTER KEY]");
+                addInventory();
+            }
+            else if (choice == "y")
+            {
+                Console.WriteLine("What would you like to purchase?");
+                Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
+                Console.WriteLine("Other Options:");
+                Console.WriteLine("e.)done buying / f.)exit [ENTER KEY]");
                 addInventory();
             }
             else if (choice == "no")
+            {
+                Console.WriteLine("[ENTER]");
+                Console.Read();
+                showInventory();
+            }
+            else if (choice == "n")
             {
                 Console.WriteLine("[ENTER]");
                 Console.Read();
@@ -180,15 +192,10 @@ namespace Lemonade_Stand_Project
                     shopping.purchaseIceCubes();
                     break;
                 case "e":
-                    Console.WriteLine("Begin Day {0}", d.day);
+                    aiStockInventory();
+                    playerSetRecipe();
                     break;
                 case "f":
-                    w.getPrdictWeather();
-                    Console.WriteLine("[ENTER]");
-                    Console.ReadLine();
-                    shopping.noMoreBuying();
-                    break;
-                case "g":
                     Environment.Exit(0);
                     break;
                 default:

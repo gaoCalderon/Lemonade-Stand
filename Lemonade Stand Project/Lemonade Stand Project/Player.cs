@@ -58,6 +58,7 @@ namespace Lemonade_Stand_Project
             {
                 SetName();
                 RandomAiName();
+                Inventory.totalMoney = 20;
                 day.humanAiDayPath();
             }
             else

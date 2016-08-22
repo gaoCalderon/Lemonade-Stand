@@ -12,24 +12,33 @@ namespace Lemonade_Stand_Project
         Ice ice = new Ice();
         Recipe rec = new Recipe();
 
-        public int pitcher;
-        public int recordTotalCustomers;
+        public static int pitcher;
+        public static int recordTotalCustomers;
+        public static int aiPitcher;
+        public static int aiRecordTotalCustomers;
 
         public void stand()
         {
-            this.pitcher = 8;
-            this.recordTotalCustomers = 0;
+            pitcher = 8;
+            recordTotalCustomers = 0;
         }
 
-        public int getPicter()
+        public void aiStand()
         {
-            return pitcher;
+            aiPitcher = 8;
+            aiRecordTotalCustomers = 0;
         }
 
         public int makeFirstPitcher()
         {
             rec.useRecipeMakePitcher();
             return pitcher;
+        }
+
+        public int aiMakeFirstPitcher()
+        {
+            rec.aiDefaultUseRecipe();
+            return aiPitcher;
         }
 
         public void checkHowMuchInPitcher()
@@ -45,9 +54,27 @@ namespace Lemonade_Stand_Project
             }
         }
 
+        public void aiCheckHowMuchInPitcher()
+        {
+            if (aiPitcher <= 0)
+            {
+                rec.aiDefaultUseRecipe();
+                aiPitcher += 8;
+            }
+            else
+            {
+                aiPitcher -= 1;
+            }
+        }
+
         public void PourDrink()
         {
             checkHowMuchInPitcher();
+        }
+
+        public void aiPourDrink()
+        {
+            aiCheckHowMuchInPitcher();
         }
 
         public void actionConsumerBuyRealCup()
@@ -57,9 +84,11 @@ namespace Lemonade_Stand_Project
             PourDrink();
         }
 
-        public int getTotalNumberOfCustomers()
+        public void aiActionConsumerBuyRealCup()
         {
-            return recordTotalCustomers;
+            cup.aiPurchaseCup();
+            rec.aiDefaultUseIce();
+            aiPourDrink();
         }
 
         public int setNumberOFCustomersPerDay()
@@ -67,6 +96,13 @@ namespace Lemonade_Stand_Project
             Random people = new Random();
             recordTotalCustomers = people.Next(2, 62);
             return recordTotalCustomers;
+        }
+
+        public int setAiNumberOFCustomersPerDay()
+        {
+            Random people = new Random();
+            aiRecordTotalCustomers = people.Next(2, 62);
+            return aiRecordTotalCustomers;
         }
 
         public void Customers()

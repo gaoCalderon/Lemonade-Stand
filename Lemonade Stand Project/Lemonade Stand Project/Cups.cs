@@ -10,8 +10,7 @@ namespace Lemonade_Stand_Project
     {
         public static double cupCost;
         public static int recordCupsSold;
-
-        Player p = new Player();
+        public static int aiRecordCupsSold;
 
 
         public void purchaseCup()
@@ -19,6 +18,14 @@ namespace Lemonade_Stand_Project
             cups -= 1;
             recordCupsSold += 1;
             Cups.cupCost += Inventory.madeMoney;
+        }
+
+        public void aiPurchaseCup()
+        {
+            Recipe r = new Recipe();
+            aiCups -= 1;
+            aiRecordCupsSold += 1;
+            r.aiDefaultCupCharge();
         }
 
         public void askCupCharge()
@@ -35,11 +42,11 @@ namespace Lemonade_Stand_Project
 
         public void buy25Cups()
         {
-            if (getTotalMoney() > 1.00)
+            if (totalMoney > 1.00)
             {
                 cups += 25;
                 totalMoney -= 1.00;
-                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left.", Player.name, totalMoney);
             }
             else
             {
@@ -49,11 +56,11 @@ namespace Lemonade_Stand_Project
 
         public void buy50Cups()
         {
-            if (getTotalMoney() > 1.50)
+            if (totalMoney > 1.50)
             {
                 cups += 50;
                 totalMoney -= 1.50;
-                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left.", Player.name, totalMoney);
             }
             else
             {
@@ -63,13 +70,12 @@ namespace Lemonade_Stand_Project
 
         public void buy100Cups()
         {
-            if (getTotalMoney() > 2.80)
+            if (totalMoney > 2.80)
             {
                 cups += 100;
                 totalMoney -= 2.80;
-                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
+                Console.WriteLine("{0} has ${1} left.", Player.name, totalMoney);
             }
-        }
             else
             {
                 moneyNotEnough();
