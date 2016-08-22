@@ -24,7 +24,7 @@ namespace Lemonade_Stand_Project
             return forecast;
         }
 
-        public void setRandomForecast()
+        public void setForecast()
         {
             Random f = new Random();
             forecast = f.Next(1, 5);
@@ -46,35 +46,35 @@ namespace Lemonade_Stand_Project
                     Console.WriteLine("Forecast: Rainy Day");
                     break;
                 default:
-                    setRandomForecast();
+                    setForecast();
                     break;
             }
         }
 
-        public void getForecast()
-        {
-            switch (forecast)
-            {
-                case 1:
-                    Console.WriteLine("Forecast: Bright & Sunny");
-                    break;
-                case 2:
-                    Console.WriteLine("Forecast: Part Cloudy & Sunny");
-                    break;
-                case 3:
-                    Console.WriteLine("Forecast: Strong Overcast");
-                    break;
-                case 4:
-                    Console.WriteLine("Forecast: Light Rains");
-                    break;
-                case 5:
-                    Console.WriteLine("forecast: Rainy Day");
-                    break;
-                default:
-                    setRandomForecast();
-                    break;
-            }
-        }
+        //public void setForecast()
+        //{
+        //    switch (forecast)
+        //    {
+        //        case 1:
+        //            Console.WriteLine("Forecast: Bright & Sunny");
+        //            break;
+        //        case 2:
+        //            Console.WriteLine("Forecast: Part Cloudy & Sunny");
+        //            break;
+        //        case 3:
+        //            Console.WriteLine("Forecast: Strong Overcast");
+        //            break;
+        //        case 4:
+        //            Console.WriteLine("Forecast: Light Rains");
+        //            break;
+        //        case 5:
+        //            Console.WriteLine("forecast: Rainy Day");
+        //            break;
+        //        default:
+        //            setForecast();
+        //            break;
+        //    }
+        //}
 
         public int getTemperature()
         {
@@ -92,7 +92,7 @@ namespace Lemonade_Stand_Project
         public void setweatherForecast()
         {
             Console.WriteLine("Weather Forcast:");
-            setRandomForecast();
+            setForecast();
             Console.WriteLine("High: {0} F", setRandomTemperature());
         }
 
@@ -106,7 +106,7 @@ namespace Lemonade_Stand_Project
         public void setPredictWeather()
         {
             Console.WriteLine("Weather Prediction:");
-            setRandomForecast();
+            setForecast();
             Console.WriteLine("High: {0} F", setRandomTemperature());
         }
 
@@ -117,97 +117,34 @@ namespace Lemonade_Stand_Project
             Console.WriteLine("High: {0} F", getTemperature());
         }
 
-
-        //        public int temperature;
-        //        public int forecast;
-
-        //        public Weather()
-        //        {
-        //            this.temperature = 0;
-        //            this.forecast = 0;
-        //        }
-
-
-
-        //        public int forecastEqualRandomCall() 
-        //{ 
-        //            forecast = setRandomForecast();
-        //            return this.forecast;
-        //        }
-
-        //        public int setRandomForecast()
-        //        {
-        //            Random f = new Random();
-        //            int setRanForecast = f.Next(1, 5);
-        //            return setRanForecast;
-        //        }
-
-        //        public void realDayForecast()
-        //        {
-        //            int results = setRandomForecast();
-        //            if (results == 1)
-        //            {
-        //                Console.WriteLine("Weather Forecast: Bright & Sunny");
-        //            }
-        //            else if (results == 2)
-        //            {
-        //                Console.WriteLine("Weather Forcast: Part Cloudy & Sunny");
-        //            }
-        //            else if (results == 3)
-        //            {
-        //                Console.WriteLine("Weather Forcast: Strong Overcast");
-        //            }
-        //            else if (results == 4)
-        //            {
-        //                Console.WriteLine("Weather Forcast: Light Rains");
-        //            }
-        //            else if (results == 5)
-        //            {
-        //                Console.WriteLine("Weather Forcast: Rainy Day");
-        //            }
-        //            else
-        //            {
-        //                realDayForecast();
-        //            }
-        //        }
-
-        //        public int setRandomTemperature()
-        //        {
-        //            Random tempset = new Random();
-        //            int setTemp = tempset.Next(63, 102);
-        //            return setTemp;
-        //        }
-
-        //        public int GetDayTemperature()
-        //        {
-        //            return temperature;
-        //        }
-
-        //        public int temperatureEqualRandomCall()
-        //        { 
-        //            temperature = setRandomTemperature();
-        //            return this.temperature;
-        //        }
-
-        //        public void realDayTemperature()
-        //        {
-        //            setRandomForecast();
-        //            Console.WriteLine("Temperature in the hight: {0}F", GetDayTemperature());
-        //        }
-
-        //       public void weatherForecast()
-        //        {
-        //           Console.WriteLine("Weather Forcast:");
-        //           Console.WriteLine("Predicts: {0}", setRandomForecast());
-        //           Console.WriteLine("in the highs of {0} degrees Fahrenheit", setRandomTemperature());
-        //        }
-
-        //        public void getWeatherPrediction()
-        //        {
-        //            Console.WriteLine("Weather Forcast:");
-        //            Console.WriteLine("Forecaste: {0}", getForecast());
-        //            Console.WriteLine("in the highs of {0} degrees Fahrenheit", GetDayTemperature());
-        //        }
+        public void getForecast()
+        {
+            forecast = Console.Read();
+            if (forecast == 1)
+            {
+                Console.WriteLine("Forecast: Bright & Sunny");
+            }
+            else if (forecast == 2)
+            {
+                Console.WriteLine("Forcast: Part Cloudy & Sunny");
+            }
+            else if (forecast == 3)
+            {
+                Console.WriteLine("Forcast: Strong Overcast");
+            }
+            else if (forecast == 4)
+            {
+                Console.WriteLine("Forcast: Light Rains");
+            }
+            else if (forecast == 5)
+            {
+                Console.WriteLine("Forcast: Rainy Day");
+            }
+            else
+            {
+                getForecast();
+            }
+        }
 
     }
 

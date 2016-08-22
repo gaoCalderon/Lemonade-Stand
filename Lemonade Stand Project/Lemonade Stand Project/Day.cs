@@ -35,7 +35,7 @@ namespace Lemonade_Stand_Project
 
         Weather w = new Weather();
         Stand s = new Stand();
-        Player p = new Player();
+        Player p = new Player("", "");
         Cups c = new Cups();
         Inventory i = new Inventory();
         Ice ice = new Ice();
@@ -44,19 +44,33 @@ namespace Lemonade_Stand_Project
         public void plugInDayCycle()
         {
             w.setPredictWeather();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             goToInventory();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             w.setweatherForecast();
             s.setNumberOFCustomersPerDay();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", p.getName());
             Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", s.getTotalNumberOfCustomers(), p.getName());
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             cus.customerAtLemonadeStand();
             Console.WriteLine("{0} cups of Lemonade were sold today.", c.getCupsSold());
             Console.WriteLine("{0} made ${1} today.", p.getName(), i.getMadeMoney());
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             i.addTotalMoneyMade();
             i.runAfterAddTotalMoneyMade();
             Console.WriteLine("{0} money total at the end of the day is ${1}", p.getName(), i.getTotalMoney());
+            Console.WriteLine("[ENTER]");
+            Console.Read();
             Console.WriteLine("All your ice melted at the end of the day.");
             ice.endDayNoIceCubes();
+            Console.WriteLine("[ENTER]");
+            Console.Read();
         } 
 
         public void singleDayPath()  //not done yet
@@ -146,7 +160,7 @@ namespace Lemonade_Stand_Project
         public void humanAiDayPath()
         {
             Inventory enterInventory = new Inventory();
-            Player player = new Player();
+            Player player = new Player("", "");
             Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
             Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
             string days = Console.ReadLine();

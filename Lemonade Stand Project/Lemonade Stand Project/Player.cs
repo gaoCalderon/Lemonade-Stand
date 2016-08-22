@@ -11,7 +11,7 @@ namespace Lemonade_Stand_Project
         string name;
         string aiName;
 
-        public void player(string name, string aiName)
+        public Player(string name, string aiName)
         {
             this.name = name;
             this.aiName = aiName;
@@ -25,7 +25,7 @@ namespace Lemonade_Stand_Project
         public void SetName()
         {
             Console.WriteLine("Please create a name: [ENTER]");
-            this.name = Console.ReadLine();
+            name = Console.ReadLine();
         }
 
         List<string> AiNames = new List<string>() {"Sent", "Tey", "Cater", "Fin", "Einner"};
@@ -57,13 +57,13 @@ namespace Lemonade_Stand_Project
             int numberOfPlayers = int.Parse(input);
             if (numberOfPlayers == 1)
             {
-                game.playerOne();
+                SetName();
                 inv.startMoney();
                 day.singleDayPath();
             }
             else if (numberOfPlayers == 2)
             {
-                game.playerOne();
+                SetName();
                 RandomAiName();
                 day.humanAiDayPath();
             }

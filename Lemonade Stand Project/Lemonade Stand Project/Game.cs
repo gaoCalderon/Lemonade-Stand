@@ -9,19 +9,10 @@ namespace Lemonade_Stand_Project
     class Game
     {
 
-        Player player = new Player();
-        public void playerOne()
-        {
-            player.SetName();
-        }
-
-        public void playerTwo()
-        {
-            player.SetName();
-        }
-
+        
         public void runGame()
         {
+            Player player = new Player("Player", "Computer");
             Console.WriteLine("Welcome to Lemonade Stand");
             player.createPlayerMode();
             Console.WriteLine("Would you like to play again? Yes/No [ENTER]");

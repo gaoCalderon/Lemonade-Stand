@@ -119,7 +119,7 @@ namespace Lemonade_Stand_Project
 
         public void showInventory()
         {
-            Player person = new Player();
+            Player person = new Player("PlayerOne", "Computer");
             Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getTotalMoney());
             Console.WriteLine("{0} number of Cups", getCups());
             Console.WriteLine("{0} number of Lemons", getLemons());
@@ -137,7 +137,7 @@ namespace Lemonade_Stand_Project
                 Console.WriteLine("What would you like to purchase?");
                 Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
                 Console.WriteLine("Other Options:");
-                Console.WriteLine("e.)done buying / f.) get weather prediction g.) bankrupt / h.) help / i.)exit [ENTER KEY]");
+                Console.WriteLine("e.)done buying / f.) get weather prediction / g.)exit [ENTER KEY]");
                 addInventory();
             }
             else if (userchoice == "no")
@@ -184,12 +184,6 @@ namespace Lemonade_Stand_Project
                     shopping.noMoreBuying();
                     break;
                 case "g":
-                    //link to end of game report then end
-                    break;
-                case "h":
-                    //add link tips/rule page at introductory
-                    break;
-                case "i":
                     Environment.Exit(0);
                     break;
                 default:
