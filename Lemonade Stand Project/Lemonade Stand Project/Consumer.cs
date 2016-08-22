@@ -65,7 +65,7 @@ namespace Lemonade_Stand_Project
 
         public void setCustomerDemandPriceOfCup()
         {
-            double demand = cup.getCupCharge();
+            double demand = Cups.cupCost;
             if (demand <= 0.18)
             {
                 sta.actionConsumerBuyRealCup();

@@ -8,19 +8,17 @@ namespace Lemonade_Stand_Project
 {
     class Cups : Inventory
     {
-        public double cupCost;
-        public int recordCupsSold;
+        public static double cupCost;
+        public static int recordCupsSold;
 
-        public int getCupsSold()
-        {
-            return recordCupsSold;
-        }
+        Player p = new Player();
+
 
         public void purchaseCup()
         {
             cups -= 1;
             recordCupsSold += 1;
-            madeMoney += getCupCharge();
+            Cups.cupCost += Inventory.madeMoney;
         }
 
         public void askCupCharge()
@@ -35,17 +33,13 @@ namespace Lemonade_Stand_Project
             return cupCost;
         }
 
-        public double getCupCharge()
-        {
-            return cupCost;
-        }
-
         public void buy25Cups()
         {
             if (getTotalMoney() > 1.00)
             {
                 cups += 25;
                 totalMoney -= 1.00;
+                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
             }
             else
             {
@@ -59,6 +53,7 @@ namespace Lemonade_Stand_Project
             {
                 cups += 50;
                 totalMoney -= 1.50;
+                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
             }
             else
             {
@@ -72,7 +67,9 @@ namespace Lemonade_Stand_Project
             {
                 cups += 100;
                 totalMoney -= 2.80;
+                Console.WriteLine("{0} has ${1} left.", Player.name, Inventory.totalMoney);
             }
+        }
             else
             {
                 moneyNotEnough();

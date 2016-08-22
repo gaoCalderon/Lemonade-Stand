@@ -35,7 +35,7 @@ namespace Lemonade_Stand_Project
 
         Weather w = new Weather();
         Stand s = new Stand();
-        Player p = new Player("", "");
+        Player p = new Player();
         Cups c = new Cups();
         Inventory i = new Inventory();
         Ice ice = new Ice();
@@ -53,18 +53,18 @@ namespace Lemonade_Stand_Project
             s.setNumberOFCustomersPerDay();
             Console.WriteLine("[ENTER]");
             Console.Read();
-            Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", p.getName());
-            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", s.getTotalNumberOfCustomers(), p.getName());
+            Console.WriteLine("{0}'s stand sold lemonade for 6 hours.", Player.name);
+            Console.WriteLine("{0} possible customers past {1}'s Lemondade Stand.", s.getTotalNumberOfCustomers(), Player.name);
             Console.WriteLine("[ENTER]");
             Console.Read();
             cus.customerAtLemonadeStand();
-            Console.WriteLine("{0} cups of Lemonade were sold today.", c.getCupsSold());
-            Console.WriteLine("{0} made ${1} today.", p.getName(), i.getMadeMoney());
+            Console.WriteLine("{0} cups of Lemonade were sold today.", Cups.recordCupsSold);
+            Console.WriteLine("{0} made ${1} today.", Player.name, Inventory.madeMoney);
             Console.WriteLine("[ENTER]");
             Console.Read();
             i.addTotalMoneyMade();
             i.runAfterAddTotalMoneyMade();
-            Console.WriteLine("{0} money total at the end of the day is ${1}", p.getName(), i.getTotalMoney());
+            Console.WriteLine("{0} money total at the end of the day is ${1}", Player.name, Inventory.totalMoney);
             Console.WriteLine("[ENTER]");
             Console.Read();
             Console.WriteLine("All your ice melted at the end of the day.");
@@ -86,16 +86,16 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
-                    double number = i.totalMoney;
+                    double number = Inventory.totalMoney;
                     if (number >= 20)
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 7 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 7 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
                     }
                     else
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 7 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 7 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
                     }
                     break;
                 case "14":
@@ -103,16 +103,16 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
-                    double number1 = i.totalMoney;
+                    double number1 = Inventory.totalMoney;
                     if (number1 >= 20)
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 14 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 14 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
                     }
                     else
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 14 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 14 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
                     }
                     break;
 
@@ -121,16 +121,16 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
-                    double number2 = i.totalMoney;
+                    double number2 = Inventory.totalMoney;
                     if (number2 >= 20)
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 21 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 21 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
                     }
                     else
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 21 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 21 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
                     }
                     break;
                 case "28":
@@ -138,16 +138,16 @@ namespace Lemonade_Stand_Project
                     {
                         plugInDayCycle();
                     }
-                    double number3 = i.totalMoney;
+                    double number3 = Inventory.totalMoney;
                     if (number3 >= 20)
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 28 days, {0} profited ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 28 days, {0} profited ${1}", Player.name, Inventory.testAddMoney);
                     }
                     else
                     {
                         i.profit();
-                        Console.WriteLine("At the end of 28 days, {0} lost ${1}", p.getName(), i.getTestAddMoney());
+                        Console.WriteLine("At the end of 28 days, {0} lost ${1}", Player.name, Inventory.testAddMoney);
                     }
                     break;
                 default:
@@ -160,7 +160,7 @@ namespace Lemonade_Stand_Project
         public void humanAiDayPath()
         {
             Inventory enterInventory = new Inventory();
-            Player player = new Player("", "");
+            Player player = new Player();
             Console.WriteLine("Please type in how many number of days you would like to sale lemonade for?");
             Console.WriteLine("Between: 7, 14, 21 or 28 days? [ENTER]");
             string days = Console.ReadLine();

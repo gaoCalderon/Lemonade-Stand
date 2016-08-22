@@ -8,31 +8,13 @@ namespace Lemonade_Stand_Project
 {
     class Inventory
     {
-        public double totalMoney;
-        public double madeMoney;
-        public double testAddMoney;
-        public int cups;
-        public int lemons;
-        public int sugar;
-        public int iceCubes;
-
-        public void inventoryProducts()
-        {
-            this.totalMoney = 0;
-            this.madeMoney = 0;
-            this.testAddMoney = 0;
-            this.cups = 0;
-            this.lemons = 0;
-            this.sugar = 0;
-            this.iceCubes = 0;
-        }
-
-        public double startMoney()
-        {
-            double cash = 20;
-            double totalMoney = cash;
-            return totalMoney;
-        }
+        public static double totalMoney;
+        public static double madeMoney;
+        public static double testAddMoney;
+        public static int cups;
+        public static int lemons;
+        public static int sugar;
+        public static int iceCubes;
 
         public double getTotalMoney()
         {
@@ -46,27 +28,27 @@ namespace Lemonade_Stand_Project
 
         public double getTestAddMoney()
         {
-            return this.testAddMoney;
+            return testAddMoney;
         }
 
         public int getCups()
         {
-            return this.cups;
+            return cups;
         }
 
         public int getLemons()
         {
-            return this.lemons;
+            return lemons;
         }
 
         public int getSugar()
         {
-            return this.sugar;
+            return sugar;
         }
 
         public int getIceCubes()
         {
-            return this.iceCubes;
+            return iceCubes;
         }
 
         public void moneyNotEnough()

@@ -13,6 +13,8 @@ namespace Lemonade_Stand_Project
         Sugar s = new Sugar();
         Ice i = new Ice();
 
+        string choice;
+
         public void useRecipeMakePitcher()
         {
             l.useLemon();
@@ -22,10 +24,10 @@ namespace Lemonade_Stand_Project
         public void showRecipe()
         {
             Console.WriteLine("Price & Quality of Lemonade Stand");
-            Console.WriteLine("set cup charge: {0}", cp.getCupCharge());
+            Console.WriteLine("set cup charge: {0}", Cups.cupCost);
             Console.WriteLine("Lemons per Pictcher: {0}", l.getLemonPerPitcher());
             Console.WriteLine("Sugar cup per picture: {0}", s.getSugarPerPitcher());
-            Console.WriteLine("Ice Cube per cup: {0}", i.getIceCubePerCup());
+            Console.WriteLine("Ice Cube per cup: {0}", Ice.IceRecipiCount);
         }
 
         public void defaultRecipe()
@@ -101,7 +103,7 @@ namespace Lemonade_Stand_Project
 
         public void keepChange()
         {
-            string choice = Console.ReadLine();
+            choice = Console.ReadLine();
             if (choice == "keep")
             {
                 setDefaultRecipe();
@@ -119,20 +121,22 @@ namespace Lemonade_Stand_Project
 
         public void showInventory()
         {
-            Player person = new Player("PlayerOne", "Computer");
-            Console.WriteLine("{0} currently have ${1} avaialbe", person.getName(), getTotalMoney());
+            Player person = new Player();
+            Console.WriteLine("{0} currently have ${1} avaialbe", Player.name, Inventory.totalMoney);
             Console.WriteLine("{0} number of Cups", getCups());
             Console.WriteLine("{0} number of Lemons", getLemons());
             Console.WriteLine("{0} number cups of Sugar", getSugar());
             Console.WriteLine("{0} number of Ice Cubes", getIceCubes());
+            Console.WriteLine("[ENTER]");
+            Console.Read();
         }
 
         public void stockInventory()
         {
-            Console.WriteLine("Would you like to stock items in your inventory? Yes/No [ENTER]");
             Day day = new Day();
-            string userchoice = Console.ReadLine();
-            if (userchoice == "yes")
+            Console.WriteLine("Would you like to stock items in your inventory? Yes/No [ENTER]");
+            choice = Console.ReadLine();
+            if (choice == "yes")
             {
                 Console.WriteLine("What would you like to purchase?");
                 Console.WriteLine("Type in a letter: a.) cups / b.) lemons / c) sugar / d.) ice");
@@ -140,9 +144,10 @@ namespace Lemonade_Stand_Project
                 Console.WriteLine("e.)done buying / f.) get weather prediction / g.)exit [ENTER KEY]");
                 addInventory();
             }
-            else if (userchoice == "no")
+            else if (choice == "no")
             {
-                Console.WriteLine("OK,");
+                Console.WriteLine("[ENTER]");
+                Console.Read();
                 showInventory();
             }
             else

@@ -12,7 +12,7 @@ namespace Lemonade_Stand_Project
         
         public void runGame()
         {
-            Player player = new Player("Player", "Computer");
+            Player player = new Player();
             Console.WriteLine("Welcome to Lemonade Stand");
             player.createPlayerMode();
             Console.WriteLine("Would you like to play again? Yes/No [ENTER]");

@@ -8,19 +8,8 @@ namespace Lemonade_Stand_Project
 {
     class Player
     {
-        string name;
-        string aiName;
-
-        public Player(string name, string aiName)
-        {
-            this.name = name;
-            this.aiName = aiName;
-        }
-
-         public string getName()
-        {
-            return this.name;
-        }
+        public static string name;
+        public static string aiName;
 
         public void SetName()
         {
@@ -28,20 +17,24 @@ namespace Lemonade_Stand_Project
             name = Console.ReadLine();
         }
 
-        List<string> AiNames = new List<string>() {"Sent", "Tey", "Cater", "Fin", "Einner"};
-
-        public string getAiName()
+        public void RandomAiName()
         {
-            aiName = RandomAiName();
-            return aiName;
-        }
-
-        public string RandomAiName()
-        {
-            Random a = new Random();
-            a.Next(0, AiNames.Count);
-            string choice = AiNames[a.Next(0, AiNames.Count)];
-            return choice;
+            Random ai = new Random();
+            aiName = Console.ReadLine();
+            switch (aiName)
+            {
+                case "Max":
+                    break;
+                case "Jay":
+                    break;
+                case "Tiffany":
+                    break;
+                case "Mini":
+                    break;
+                default:
+                    RandomAiName();
+                    break;
+            }
         }
 
 
@@ -58,7 +51,7 @@ namespace Lemonade_Stand_Project
             if (numberOfPlayers == 1)
             {
                 SetName();
-                inv.startMoney();
+                Inventory.totalMoney = 20;
                 day.singleDayPath();
             }
             else if (numberOfPlayers == 2)
