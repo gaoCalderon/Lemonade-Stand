@@ -42,15 +42,11 @@ namespace Lemonade_Stand_Project
             temperatureAffect = sky.setRandomTemperature();
         }
 
-        public int getPersonForecastPrefer()
+        public int setPersonForecastPrefer()
         {
+            Random number = new Random();
+            weatherAffect = number.Next(1, 5);
             return weatherAffect;
-        }
-
-        public void setPersonForecastPrefer()
-        {
-            sky.ConsumerRandomChoice();
-            weatherAffect = sky.getTemperature();
         }
 
         public double getDemandPriceOfCup()

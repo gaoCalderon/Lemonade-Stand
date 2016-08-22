@@ -100,8 +100,8 @@ namespace Lemonade_Stand_Project
 
         public int setAiNumberOFCustomersPerDay()
         {
-            Random people = new Random();
-            aiRecordTotalCustomers = people.Next(2, 62);
+            Random aiCustomers = new Random();
+            aiRecordTotalCustomers = aiCustomers.Next(2, 62);
             return aiRecordTotalCustomers;
         }
 
